@@ -170,9 +170,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('mapa-mundial')) {
         try {
             const mapWorld = L.map('mapa-mundial').setView([0, 0], 2);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(mapWorld);
+            L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under ODbL.',
+    subdomains: 'abcd',
+    minZoom: 0,
+    maxZoom: 16
+}).addTo(mapWorld);
 
             const globalLocations = [
                 { coords: [-34.0, -60.0], name: 'Argentina' },
@@ -239,4 +242,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('All scripts initialized successfully.');
 });
+
 

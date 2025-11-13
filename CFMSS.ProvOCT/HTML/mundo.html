@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://unpkg.com;">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://unpkg.com https://{s}.tile.openstreetmap.org https://stamen-tiles-{s}.a.ssl.fastly.net data:;">
         <title>CFMSS en el Mundo</title>
         <link rel="icon" href="" type="image/png">
         <link rel="stylesheet" href="/CSS/mediaqueries.css">
@@ -50,7 +50,7 @@
     en obras educativas, pastorales y sociales. (Revisar)
 
   <div id="mapa-mundial"></div>
-<script  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 </section>
         </main>
 
@@ -92,10 +92,11 @@
             </div>
         </footer>
 
-        
+        <script  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script src="/JS/script.js"></script>
     </body>
 </html>
+
 
 
 

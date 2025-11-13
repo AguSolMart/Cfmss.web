@@ -242,9 +242,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('All scripts initialized successfully.');
 });
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-}).addTo(map);
 
 
 

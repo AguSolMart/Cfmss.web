@@ -70,13 +70,27 @@
     }
 
     .acordeon-mapa {
+        padding: 0 1rem;
+    }
+
+    .acordeon-layout {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
+    }
+
+    .acordeon {
+        max-width: 100%;
     }
 
     .mapa-container {
-        min-width: auto;
-        max-width: 100%;
+        flex: 1;
+        position: relative;
+        top: auto;
+        width: 100%;
+    }
+
+    #mapa-historia {
+        height: 350px;
     }
 
     .mapa-container iframe {
@@ -219,6 +233,158 @@
         max-width: 200px;
         height: auto;
         min-height: 150px;
+    }
+
+    /* Carrusel responsive */
+    .carrusel-container {
+        margin: 1rem 0;
+    }
+
+    .carrusel-imagenes {
+        height: 350px;
+    }
+
+    .carrusel-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .carrusel-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .carrusel-btn-prev {
+        left: 10px;
+    }
+
+    .carrusel-btn-next {
+        right: 10px;
+    }
+
+    .carrusel-caption {
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+
+    .carrusel-indicadores {
+        bottom: 15px;
+        gap: 8px;
+    }
+
+    .indicador {
+        width: 10px;
+        height: 10px;
+    }
+
+    .indicador.activo {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Carrusel gobierno responsive */
+    .gobierno-carrusel-container {
+        margin: 0 0 2rem;
+    }
+
+    .gobierno-carrusel-imagenes {
+        height: 300px;
+    }
+
+    .gobierno-carrusel-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .gobierno-carrusel-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .gobierno-btn-prev {
+        left: 10px;
+    }
+
+    .gobierno-btn-next {
+        right: 10px;
+    }
+
+    .gobierno-carrusel-caption {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    .gobierno-carrusel-indicadores {
+        bottom: 12px;
+        gap: 6px;
+    }
+
+    .gobierno-indicador {
+        width: 9px;
+        height: 9px;
+    }
+
+    .gobierno-indicador.activo {
+        width: 11px;
+        height: 11px;
+    }
+
+    .gobierno-grid {
+        gap: 1rem;
+    }
+
+    .cargo-card-compacta {
+        max-width: 150px;
+        padding: 0.7rem;
+    }
+
+    /* Timelines responsive */
+    .timeline-item {
+        gap: 0.5rem;
+        padding-left: 0.7rem;
+        padding: 0.4rem 0;
+        padding-left: 0.7rem;
+    }
+
+    .timeline-item::before {
+        left: -4px;
+        top: 0.6rem;
+        width: 7px;
+        height: 7px;
+    }
+
+    .timeline-fecha {
+        min-width: 45px;
+        font-size: 0.65rem;
+    }
+
+    .timeline-texto h4 {
+        font-size: 0.72rem;
+    }
+
+    .timeline-texto p {
+        font-size: 0.67rem;
+    }
+
+    .btn-timeline {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .timeline-contenido.activo {
+        max-height: 3500px;
+    }
+
+    .figura-card,
+    .carisma-card,
+    .advocaciones-card {
+        max-width: 100%;
+        padding: 1.2rem 0.9rem;
+    }
+
+    .figura-card img {
+        width: 180px;
+        height: 180px;
     }
 
     .figuras-grid,
@@ -421,3 +587,27 @@
         image-rendering: -webkit-optimize-contrast;
     }
 }
+    /* Oraciones acordeón responsive */
+    .oracion-titulo {
+        padding: 0.8rem 1rem;
+        font-size: 0.82rem;
+    }
+
+    .oracion-texto.activo {
+        padding: 0.9rem 0.8rem 1rem 0.8rem;
+    }
+
+    .oracion-texto p {
+        font-size: 0.75rem;
+        line-height: 1.6;
+        margin-bottom: 0.7rem;
+    }
+
+    .oracion-versiculo {
+        padding: 0 0.3rem;
+        margin-top: 0.8rem;
+    }
+
+    .oracion-versiculo p {
+        font-size: 0.7rem;
+    }

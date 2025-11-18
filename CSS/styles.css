@@ -296,6 +296,129 @@ section p, section li {
     background: var(--text-white);
 }
 
+/* Carrusel de Fotos */
+.carrusel-container {
+    position: relative;
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: var(--rounded-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.carrusel-imagenes {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.carrusel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrusel-slide.activo {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carrusel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carrusel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.carrusel-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carrusel-btn svg {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-color2);
+}
+
+.carrusel-btn-prev {
+    left: 20px;
+}
+
+.carrusel-btn-next {
+    right: 20px;
+}
+
+.carrusel-indicadores {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicador {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.indicador:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+.indicador.activo {
+    background: white;
+    width: 14px;
+    height: 14px;
+}
+
 /* Accordion (historiaProv.html) */
 .acordeon {
     max-width: 600px;
@@ -306,7 +429,7 @@ section p, section li {
     border-bottom: 1px solid var(--accent-color3);
     border-radius: var(--rounded-sm);
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .acordeon-titulo {
@@ -314,8 +437,8 @@ section p, section li {
     background: var(--accent-color2);
     color: var(--text-white);
     font-family: var(--font-family), serif;
-    font-size: 1.08rem;
-    padding: 0.8em 1em;
+    font-size: 0.95rem;
+    padding: 0.6em 1em;
     text-align: left;
     border: none;
     outline: none;
@@ -335,37 +458,72 @@ section p, section li {
     background: var(--accent-color4);
     color: var(--text);
     font-family: var(--font-family-sans), sans-serif;
-    display: none;
-    padding: 1em;
+    padding: 0 1em;
 }
 
 .acordeon-contenido.active {
-    display: block;
-    max-height: 200px; /* Ajusta según contenido */
+    max-height: 1000px; /* Ajustado para más contenido */
+    padding: 1em;
+}
+
+.acordeon-contenido h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.acordeon-contenido h4:first-child {
+    margin-top: 0;
+}
+
+.acordeon-contenido p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
 }
 
 /* Acordeon con Mapa (historiaProv.html) */
 .acordeon-mapa {
     display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.acordeon-mapa h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.acordeon-layout {
+    display: flex;
     gap: 2rem;
     align-items: flex-start;
-    justify-content: center;
-    margin: 2rem auto;
-    max-width: 900px;
 }
 
 .acordeon {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    max-width: 600px;
-    margin: 2rem auto 2rem 0;
     gap: 0;
+    max-width: 600px;
 }
 
 .mapa-container {
-    flex: 1 1 350px;
-    min-width: 320px;
-    max-width: 400px;
+    flex: 0 0 400px;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+#mapa-historia {
+    width: 100%;
+    height: 500px;
+    border-radius: var(--rounded-lg);
+    box-shadow: var(--shadow);
+    background: #e0e0e0;
 }
 
 .mapa-container iframe {
@@ -379,8 +537,9 @@ section p, section li {
 /* Figuras Franciscanas (espiritualidad.html) */
 .figuras-franciscanas {
     margin: 3rem auto;
-    max-width: 900px;
+    max-width: 1200px;
     text-align: center;
+    padding: 0 1rem;
 }
 
 .figuras-franciscanas h2 {
@@ -394,37 +553,149 @@ section p, section li {
     background: var(--accent-color4);
     border-radius: var(--rounded-lg);
     box-shadow: var(--shadow);
-    padding: 1.5rem 1rem;
-    max-width: 250px;
-    flex: 1 1 220px;
+    padding: 1.5rem 1rem 1.8rem 1rem;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .figura-card img {
-    width: 90px;
-    height: 90px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 50%;
+    object-position: center center;
+    border-radius: 12px;
     margin-bottom: 1rem;
-    border: 2px solid var(--accent-color2);
+    border: 3px solid var(--accent-color2);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.img-francisco {
+    object-position: center 25% !important;
+}
+
+.img-clara {
+    object-position: center 25% !important;
+}
+
+.img-serafina {
+    object-position: center 80% !important;
 }
 
 .figura-card h3 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--accent-color2);
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.6rem;
 }
 
 .figura-card p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Botón Timeline y contenido desplegable */
+.btn-timeline {
+    margin-top: 1rem;
+    padding: 0.55rem 1.1rem;
+    background: var(--accent-color2);
+    color: white;
+    border: none;
+    border-radius: var(--rounded-md);
+    cursor: pointer;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-timeline:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-timeline.activo {
+    background: var(--accent-color);
+}
+
+.timeline-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.timeline-contenido.activo {
+    max-height: 3000px;
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+    border-left: 2px solid var(--accent-color2);
+    padding-left: 0.7rem;
+    margin-bottom: 0.6rem;
+    position: relative;
+    align-items: flex-start;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0.7rem;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color2);
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--accent-color4);
+}
+
+.timeline-fecha {
+    min-width: 50px;
+    font-weight: 700;
+    color: var(--accent-color2);
+    font-size: 0.7rem;
+    text-align: left;
+    flex-shrink: 0;
+}
+
+.timeline-texto {
+    flex: 1;
+    text-align: left;
+}
+
+.timeline-texto h4 {
+    font-size: 0.78rem;
+    color: var(--accent-color);
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+}
+
+.timeline-texto p {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.3;
+    margin: 0;
 }
 
 /* Carisma y Advocaciones (espiritualidad.html) */
 .carisma, .advocaciones {
     margin: 3rem auto;
-    max-width: 700px;
+    max-width: 900px;
     text-align: center;
+    padding: 0 1rem;
 }
 
 .carisma h2, .advocaciones h2 {
@@ -439,29 +710,34 @@ section p, section li {
 .gobierno-grid,
 .oraciones-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Más adaptable */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    justify-items: center;
 }
 
 .carisma-card, .advocaciones-card {
     background: var(--accent-color4);
     border-radius: var(--rounded-lg);
     box-shadow: var(--shadow);
-    padding: 1.2rem 1rem;
-    max-width: 280px;
-    flex: 1 1 220px;
+    padding: 1.2rem 1rem 1.5rem 1rem;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .carisma-card h3, .advocaciones-card h3 {
-    font-size: 1.12rem;
+    font-size: 1.05rem;
     color: var(--accent-color2);
     margin-bottom: 0.5rem;
 }
 
 .carisma-card p, .advocaciones-card p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
+    line-height: 1.4;
 }
 
 /* Sección Comunidades (cdad-colegios.html) */
@@ -565,7 +841,7 @@ section p, section li {
 /* Gobierno Provincial (historiaProv.html) */
 .gobierno-provincial {
     margin: 3rem auto;
-    max-width: 700px;
+    max-width: 900px;
     text-align: center;
 }
 
@@ -575,15 +851,139 @@ section p, section li {
     margin-bottom: 2rem;
 }
 
+/* Carrusel de fotos del gobierno */
+.gobierno-carrusel-container {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    border-radius: var(--rounded-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.gobierno-carrusel-imagenes {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.gobierno-carrusel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gobierno-carrusel-slide.activo {
+    opacity: 1;
+    z-index: 1;
+}
+
+.gobierno-carrusel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gobierno-carrusel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 1.2rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.gobierno-carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.gobierno-carrusel-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gobierno-carrusel-btn svg {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-color2);
+}
+
+.gobierno-btn-prev {
+    left: 15px;
+}
+
+.gobierno-btn-next {
+    right: 15px;
+}
+
+.gobierno-carrusel-indicadores {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.gobierno-indicador {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.gobierno-indicador:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+.gobierno-indicador.activo {
+    background: white;
+    width: 12px;
+    height: 12px;
+}
+
+/* Tarjetas de cargos */
 .gobierno-superiora {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .gobierno-grid {
     display: flex;
-    gap: 2rem;
+    gap: 1.2rem;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -598,10 +998,21 @@ section p, section li {
     text-align: center;
 }
 
+.cargo-card-compacta {
+    padding: 0.8rem 0.9rem;
+    max-width: 180px;
+    flex: 1 1 150px;
+}
+
 .cargo-card h3 {
     font-size: 1.12rem;
     color: var(--accent-color2);
     margin-bottom: 0.7rem;
+}
+
+.cargo-card-compacta h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .cargo-card .nombre {
@@ -609,6 +1020,10 @@ section p, section li {
     color: var(--text-muted);
     margin-bottom: 0;
     font-weight: 600;
+}
+
+.cargo-card-compacta .nombre {
+    font-size: 0.95rem;
 }
 
 /* Timeline (historiaInst.html) */
@@ -1030,4 +1445,110 @@ section {
 /* Transiciones Generales */
 * {
     transition: all 0.3s ease; /* Añadido para hovers suaves en elementos como .comunidad */
+}
+/* Acorde�n de Oraciones */
+.seccion-oraciones {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.oraciones-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.oracion-item {
+    background: transparent;
+    border-radius: var(--rounded-lg);
+    box-shadow: none;
+    overflow: hidden;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.oracion-titulo {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    background: var(--accent-color4);
+    border: none;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', serif;
+    letter-spacing: 0.5px;
+    color: var(--accent-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.oracion-titulo:hover {
+    background: #f0ece2;
+}
+
+.oracion-titulo::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--accent-color2);
+    transition: transform 0.3s ease;
+}
+
+.oracion-titulo.activo::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.oracion-texto {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 1rem;
+    text-align: center;
+    background: transparent;
+}
+
+.oracion-texto.activo {
+    max-height: 3000px;
+    padding: 1rem 1rem 1.2rem 1rem;
+    background: transparent;
+}
+
+.oracion-texto p {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', serif;
+}
+
+.oracion-texto p:last-child {
+    margin-bottom: 0;
+}
+
+.oracion-italica {
+    font-style: italic;
+    text-align: center !important;
+}
+
+.oracion-versiculo {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.oracion-versiculo p {
+    font-size: 0.75rem;
+    margin-bottom: 0.4rem;
+    text-align: center;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', serif;
+}
+
+.oracion-versiculo strong {
+    color: var(--accent-color2);
+    font-weight: 700;
+    margin-right: 0.3rem;
 }

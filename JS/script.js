@@ -240,5 +240,223 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
+    // Mapa de Historia (historiaProv.html)
+    if (document.getElementById('mapa-historia')) {
+        try {
+            const mapHistoria = L.map('mapa-historia').setView([-20.0, -63.0], 5);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                subdomains: ['a', 'b', 'c'],
+                minZoom: 0,
+                maxZoom: 19
+            }).addTo(mapHistoria);
+
+            // Agregar marcadores para cada comunidad
+            document.querySelectorAll('.acordeon-titulo[data-lat]').forEach(btn => {
+                const lat = parseFloat(btn.dataset.lat);
+                const lng = parseFloat(btn.dataset.lng);
+                const nombre = btn.textContent.trim();
+
+                if (lat && lng && !isNaN(lat) && !isNaN(lng)) {
+                    const marker = L.marker([lat, lng]).addTo(mapHistoria);
+                    marker.bindPopup(`<b>${nombre}</b>`);
+
+                    // Click en botón centra el mapa
+                    btn.addEventListener('click', () => {
+                        mapHistoria.setView([lat, lng], 12);
+                        marker.openPopup();
+                    });
+                }
+            });
+        } catch (error) {
+            console.error('Error initializing history map:', error);
+            document.getElementById('mapa-historia').innerHTML = '<p>Error al cargar el mapa.</p>';
+        }
+    }
+
+    // Carrusel de fotos automático
+    const carruselSlides = document.querySelectorAll('.carrusel-slide');
+    const indicadores = document.querySelectorAll('.indicador');
+    const btnPrev = document.querySelector('.carrusel-btn-prev');
+    const btnNext = document.querySelector('.carrusel-btn-next');
+    
+    if (carruselSlides.length > 0) {
+        let slideActual = 0;
+        let intervaloCarrusel;
+        
+        function mostrarSlide(indice) {
+            // Ocultar todos los slides
+            carruselSlides.forEach(slide => slide.classList.remove('activo'));
+            indicadores.forEach(ind => ind.classList.remove('activo'));
+            
+            // Mostrar el slide actual
+            slideActual = indice;
+            if (slideActual >= carruselSlides.length) slideActual = 0;
+            if (slideActual < 0) slideActual = carruselSlides.length - 1;
+            
+            carruselSlides[slideActual].classList.add('activo');
+            indicadores[slideActual].classList.add('activo');
+        }
+        
+        function siguienteSlide() {
+            mostrarSlide(slideActual + 1);
+        }
+        
+        function slideAnterior() {
+            mostrarSlide(slideActual - 1);
+        }
+        
+        function iniciarCarrusel() {
+            intervaloCarrusel = setInterval(siguienteSlide, 4000); // Cambia cada 4 segundos
+        }
+        
+        function detenerCarrusel() {
+            clearInterval(intervaloCarrusel);
+        }
+        
+        // Botones de navegación
+        btnNext.addEventListener('click', () => {
+            detenerCarrusel();
+            siguienteSlide();
+            iniciarCarrusel();
+        });
+        
+        btnPrev.addEventListener('click', () => {
+            detenerCarrusel();
+            slideAnterior();
+            iniciarCarrusel();
+        });
+        
+        // Indicadores
+        indicadores.forEach((indicador, indice) => {
+            indicador.addEventListener('click', () => {
+                detenerCarrusel();
+                mostrarSlide(indice);
+                iniciarCarrusel();
+            });
+        });
+        
+        // Pausar al pasar el mouse
+        const carruselContainer = document.querySelector('.carrusel-container');
+        carruselContainer.addEventListener('mouseenter', detenerCarrusel);
+        carruselContainer.addEventListener('mouseleave', iniciarCarrusel);
+        
+        // Iniciar el carrusel automático
+        iniciarCarrusel();
+    }
+
+    // Carrusel del gobierno provincial automático
+    const gobiernoSlides = document.querySelectorAll('.gobierno-carrusel-slide');
+    const gobiernoIndicadores = document.querySelectorAll('.gobierno-indicador');
+    const gobiernoBtnPrev = document.querySelector('.gobierno-btn-prev');
+    const gobiernoBtnNext = document.querySelector('.gobierno-btn-next');
+    
+    if (gobiernoSlides.length > 0) {
+        let gobiernoSlideActual = 0;
+        let gobiernoIntervalo;
+        
+        function mostrarGobiernoSlide(indice) {
+            gobiernoSlides.forEach(slide => slide.classList.remove('activo'));
+            gobiernoIndicadores.forEach(ind => ind.classList.remove('activo'));
+            
+            gobiernoSlideActual = indice;
+            if (gobiernoSlideActual >= gobiernoSlides.length) gobiernoSlideActual = 0;
+            if (gobiernoSlideActual < 0) gobiernoSlideActual = gobiernoSlides.length - 1;
+            
+            gobiernoSlides[gobiernoSlideActual].classList.add('activo');
+            gobiernoIndicadores[gobiernoSlideActual].classList.add('activo');
+        }
+        
+        function siguienteGobiernoSlide() {
+            mostrarGobiernoSlide(gobiernoSlideActual + 1);
+        }
+        
+        function anteriorGobiernoSlide() {
+            mostrarGobiernoSlide(gobiernoSlideActual - 1);
+        }
+        
+        function iniciarGobiernoCarrusel() {
+            gobiernoIntervalo = setInterval(siguienteGobiernoSlide, 5000); // Cambia cada 5 segundos
+        }
+        
+        function detenerGobiernoCarrusel() {
+            clearInterval(gobiernoIntervalo);
+        }
+        
+        // Botones de navegación
+        gobiernoBtnNext.addEventListener('click', () => {
+            detenerGobiernoCarrusel();
+            siguienteGobiernoSlide();
+            iniciarGobiernoCarrusel();
+        });
+        
+        gobiernoBtnPrev.addEventListener('click', () => {
+            detenerGobiernoCarrusel();
+            anteriorGobiernoSlide();
+            iniciarGobiernoCarrusel();
+        });
+        
+        // Indicadores
+        gobiernoIndicadores.forEach((indicador, indice) => {
+            indicador.addEventListener('click', () => {
+                detenerGobiernoCarrusel();
+                mostrarGobiernoSlide(indice);
+                iniciarGobiernoCarrusel();
+            });
+        });
+        
+        // Pausar al pasar el mouse
+        const gobiernoCarruselContainer = document.querySelector('.gobierno-carrusel-container');
+        gobiernoCarruselContainer.addEventListener('mouseenter', detenerGobiernoCarrusel);
+        gobiernoCarruselContainer.addEventListener('mouseleave', iniciarGobiernoCarrusel);
+        
+        // Iniciar el carrusel automático
+        iniciarGobiernoCarrusel();
+    }
+
+    // Timelines desplegables (espiritualidad.html)
+    const botonesTimeline = document.querySelectorAll('.btn-timeline');
+    
+    botonesTimeline.forEach(boton => {
+        boton.addEventListener('click', function() {
+            // Obtener el contenedor padre (figura-card, carisma-card, etc.)
+            const card = this.parentElement;
+            const timelineContenido = card.querySelector('.timeline-contenido');
+            
+            // Toggle del contenido
+            if (timelineContenido.classList.contains('activo')) {
+                timelineContenido.classList.remove('activo');
+                this.classList.remove('activo');
+                this.textContent = this.textContent.includes('Timeline') ? 'Ver Timeline' : 'Ver más';
+            } else {
+                timelineContenido.classList.add('activo');
+                this.classList.add('activo');
+                this.textContent = 'Ocultar';
+            }
+        });
+    });
+
+    // Acordeón de Oraciones
+    document.querySelectorAll('.oracion-titulo').forEach(button => {
+        button.addEventListener('click', function() {
+            const oracionTexto = this.nextElementSibling;
+            const estaActivo = oracionTexto.classList.contains('activo');
+            
+            // Cerrar todas las oraciones
+            document.querySelectorAll('.oracion-texto').forEach(texto => {
+                texto.classList.remove('activo');
+            });
+            document.querySelectorAll('.oracion-titulo').forEach(titulo => {
+                titulo.classList.remove('activo');
+            });
+            
+            // Si no estaba activo, abrirlo
+            if (!estaActivo) {
+                oracionTexto.classList.add('activo');
+                this.classList.add('activo');
+            }
+        });
+    });
+
     console.log('All scripts initialized successfully.');
 });

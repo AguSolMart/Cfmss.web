@@ -7,7 +7,7 @@
         <link rel="icon" href="" type="image/png">
         <link rel="stylesheet" href="../CSS/mediaqueries.css">
         <link rel="stylesheet" href="../CSS/styles.css">
-        <link  rel="stylesheet"  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
     </head>
     <body>
@@ -56,75 +56,460 @@
             <!-- Sección acordeón -->
     <section class="acordeon-mapa">
         <h2>Cronología de las fundaciones de las comunidades</h2>
-        <div class="acordeon">
-            <div class="acordeon-item">
-                <button class="acordeon-titulo">Llegada de las primeras misioneras</button>
-                <div class="acordeon-contenido">
-                    <p>En el año ... (agregar informacion)</p>
+        <div class="acordeon-layout">
+            <div class="acordeon">
+                <div class="acordeon-item">
+                    <button class="acordeon-titulo" data-lat="-20.4667" data-lng="-63.5333">Cuevo. Bolivia</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>Las misioneras llegaron a Cuevo el 24 de junio de 1925, en la fiesta de San Juan Bautista. La Misión de las C.F.M. Ssmo. Sto. fue inaugurada el 1 de noviembre de 1925.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Cuevo era una pequeña población boliviana, en el Vicariato Apostólico del Gran Chaco. La zona presentaba dificultades como la falta de agua, un 90% de la población tuberculosa y las consecuencias negativas de la Guerra del Chaco.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>La misión se inició a pedido de Monseñor Cesar Vigiani, a cargo del Vicariato.</p>
+                        
+                        <h4>Primeras Hermanas:</h4>
+                        <p>Las siete pioneras que llegaron a América Latina fueron Hna. María Carlina Pera (Superiora), Hna. María Emilia Tecca, Hna. María Mercedes Cablani, Hna. María Vital, Hna. María Javiera Martini, Hna. María Sofia Tagnalo y Hna. María Caposlani.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>La misión se centró en la labor evangelizadora, la escuela de catecismo para blancos e indígenas, y la visita a los enfermos y familias. El 7 de enero de 1926, la Reverenda Madre Carlina Pera fundó la escuela de niños Santa Clara de Asís, la cual funcionaba con niñas de primaria y academias de Corte y Confección.</p>
+                        
+                        <h4>Comunidad Establecida (Cuevo):</h4>
+                        <p>Después de la inauguración, la comunidad de Cuevo quedó conformada por Madre Carlina Pera (Superiora), Hermana Mercedes, Hna. Emilia Tecea y Hna. María Confadoni.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-19.7667" data-lng="-63.6167">Santa Rosa. Bolivia</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>Las misioneras partieron hacia Santa Rosa el 29 de junio de 1925. La comunidad se formó cuando Mons. Vigiani quiso mantener la presencia de las hermanas allí.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Santa Rosa recibía a las misioneras con fervor y esperanza. Se encuentra a tres kilómetros de Ivu.</p>
+                        
+                        <h4>Comunidad Establecida:</h4>
+                        <p>Hermana Sofía Tengudi, María Viali y Hermana Javiera Martini se quedaron allí provisoriamente para atender las necesidades de dicha misión.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-20.7833" data-lng="-63.2000">Misión Indígena de Machareti. Bolivia</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p> 16 de abril de 1926.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Machareti fue fundada en 1896, ubicada sobre una meseta con clima sano y tierras fértiles. La misión presuponía sacrificios inenarrables, pobreza absoluta, desconocimiento del guaraní y trato con indígenas belicosos y rudos.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>Mons. César Vigiani propuso la fundación para que las hermanas colaboraran con la educación y catequesis en la escuela indígena de mujeres.</p>
+                        
+                        <h4>Primeras Hermanas:</h4>
+                        <p> Hermanas Sofía, Emilia Zecca y María Campodoni, quienes viajaron a caballo desde Cuevo.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>Las hermanas se dedicaron a la formación humana y cristiana de las hijas de los indígenas, preparándolas para el Bautismo, la Comunión y capacitándolas en labores de cocina y campo. En 1934, durante la Guerra del Chaco, la misión fue transformada en un hospital militar, y las hermanas sirvieron como enfermeras. La misión fue abandonada cuando los paraguayos la invadieron.</p>
+                    </div>
+<button class="acordeon-titulo" data-lat="-19.8000" data-lng="-63.6000">Misión San Buenaventura de Ivu. Bolivia</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>23 de enero de 1935, en plena guerra.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Ivu ("Ojos de agua") es un antiguo centro misional fundado en 1892, cerca de Santa Rosa. Las hermanas se hicieron cargo de la obra pese a las graves circunstancias de la guerra.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>El Padre Conversor suplicó a la Madre Carlina que enviara un grupo de hermanas para tutelar a las indiecitas y hacerse cargo de la escuela, especialmente ante la llegada de militares a los frentes de guerra.</p>
+
+                        <h4>Actividad:</h4>
+                        <p>Las Clarisas Misioneras asumieron el cuidado de un centenar de niñas internas y colaboraron en el florecimiento espiritual y humano de la misión. Realizaban excursiones a los centros indígenas para catequizar a niños y enfermos.</p>
+                    </div>
+
+                    <button class="acordeon-titulo" data-lat="-22.52114" data-lng="-63.80460">Colegio "Santa Catalina de Bolonia". Tartagal, Salta. Argentina)</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p> Las misioneras llegaron el 23 de febrero de 1937. Obtuvieron autorización formal el 15 de marzo de 1937. La labor educativa se inició el 19 de marzo de 1937.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p> Tartagal, provincia de Salta, era un pueblo pequeño con un complejo entramado social, cultural y religioso, habitado por aborígenes de diversas etnias (qom, wichi, ava), criollos e inmigrantes.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>El Padre Angélico Scipione, OFM, solicitó la presencia de las hermanas para dedicarse a la educación de niñas y jóvenes, y para servir de apoyo material y moral a las hermanas en el Chaco boliviano.</p>
+                        
+                        <h4>Primeras Hermanas:</h4>
+                        <p> Nueve misioneras, incluyendo a Javiera Cabrini, Pascualina Munno, Beatriz Sarasini, y otras. La primera comunidad quedó conformada por Javiera, María, Beatriz, Pascualina, Paulina y Victoria.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>El colegio, nombrado Santa Catalina de Bolonia, ofrecía clases y academias de Corte y Confección, bordado, y dibujo. También llevaban a cabo la tarea evangelizadora en las comunidades aborígenes de la zona. La comunidad estableció un puente indispensable entre Bolivia y el puerto de Buenos Aires.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-34.63442" data-lng="-58.49527">Comunidad "Santísimo Sacramento". Ciudad Autónoma de Buenos Aires, Buenos Aires. Argentina</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>Las hermanas llegaron el 17 de diciembre de 1944.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>La casa, donada por las señoritas Lía y María Balbini, se encontraba en la calle Bacacay 4882.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>Surge por la necesidad de un lugar de reposo y descanso, un punto intermedio entre Italia y el norte argentino, para las hermanas que padecían la situación adversa en Bolivia y Tartagal.</p>
+                        
+                        <h4>Primeras Hermanas:</h4>
+                        <p>Carlina Pera (Visitadora general), Pascualina Munno, Paulina Lipicar, Victoria Rausa y Elizabeth Nunnes.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p> Luego de instalarse, comenzaron la tarea educativa. Inauguraron el Jardín de Infantes denominado "Hogar de San José" el 16 de julio de 1945. El nivel primario se inauguró el 17 de marzo de 1949, y el secundario en 1958. Desarrollaron una amplia labor misionera en zonas carenciadas de la ciudad.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-22.52114" data-lng="-63.80460">Hospital zonal de Tartagal, Salta. Argentina</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>Las hermanas se hicieron cargo del hospital el 26 de diciembre de 1947.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Tartagal. La obra misionera estuvo bajo la protección de la Sagrada Familia de Nazaret.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>Solicitud de las autoridades nacionales y locales, incluyendo al Dr. Santiago Bazán y al Padre Raimundo Monfelli, para que las hermanas asumieran la asistencia en el nuevo centro asistencial.</p>
+                        
+                        <h4>Primeras Hermanas:</h4>
+                        <p>Cinco religiosas conformaron la primera comunidad: Hermana Emilia Rinaldi (Superiora), Hna. María Fabiola Pelosi, Hna. María Alejandrina Capizzo, Hna. María Margarita Lasio y Hna. María Teresa Ruggero.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>Bajo su responsabilidad estaba la parte administrativa, disciplinaria, la orientación espiritual de los enfermos y la autoridad sobre el personal auxiliar. También dedicaban tiempo a visitar a los aborígenes en sus comunidades, llevándoles alimentos, medicinas y ayuda espiritual.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-20.0417" data-lng="-63.5194">Comunidad Inmaculada Concepción (Hospital), Camiri. Bolivia</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>4 de octubre de 1954.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Camiri, la “Capital Petrolera” de Bolivia, se encontraba en auge debido a la explotación de petróleo y carecía de servicios religiosos.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p> El Padre Octavio Bottini y Mons. Francisco Benedetti insistieron en que las hermanas asumieran el trabajo apostólico y la dirección del Hospital Petrolero.</p>
+                        
+                        <h4>Primeras Hermanas:</h4>
+                        <p>Hna. Clelia di Dominico (Superiora), Hna. Carmela Cierlante, Hna. Nicoleta Jorge, y Hna. Alejandrina Capiza.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>Las hermanas se dedicaron a la administración general del hospital, atención a enfermos, farmacia, lavandería y cafetería. También realizaban trabajo misional en los barrios adyacentes y Pastoral Parroquial. La obra se cerró definitivamente en 1983/1984 debido a que el hospital pasó a depender de la Caja de Seguro Social y las condiciones de trabajo se deterioraron.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-20.0417" data-lng="-63.5194">Casa San José (Misión Pastoral), Camiri. Bolivia</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>16 de agosto de 1984.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Barrio Obrero, con la Parroquia “San José Obrero”, en la casa cedida por el Obispo.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>Las superioras propusieron a Mons. Juan Pellegrini permanecer en Camiri y abrir una casa enfocada en las misiones Pastorales, en reemplazo de la misión hospitalaria que había cerrado.</p>
+                        
+                        <h4>Comunidad Establecida:</h4>
+                        <p>Hna. Onoria Orlando (Superiora), Hna. Carmela Cierlante, Hna. Reina Rivera y Hna. Elena Trigo.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>Iniciaron trabajo misionero y pastoral en la zona y barrios alejados. También siguieron atendiendo la Capilla del Hospital y una de las hermanas trabajó como profesora de religión en un colegio particular.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-21.2600" data-lng="-63.4700">Villamontes. Bolivia</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>8 de septiembre de 1959.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Villamontes se caracteriza por un clima cálido extremo.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>Mons. Benedetti solicitó la urgente presencia de las Clarisas para combatir la invasión de sectas (Protestantes y Testigos de Jehová) a través de la educación de niños y adultos.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p> Las obras apostólicas iniciales fueron el jardín de infantes, la Academia de Corte y Confección, y la acción evangelizadora (Pastoral y Catequesis). El kínder (que obtuvo ítem estatal en 1964) y la academia funcionaron hasta 1967. En 1992, se cambió el nombre a "Escuela Santa Clara" y se crearon los niveles primario y, posteriormente, secundario.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-24.98423" data-lng="-65.58197">Rosario de Lerma. Salta. Argentina</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>Las hermanas tomaron posesión del terreno el 19 de septiembre de 1961. Las primeras hermanas llegaron el 17 de diciembre de 1961.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Rosario de Lerma, en el Valle de Lerma, con clima saludable. La propiedad fue donada por don Alberto Durand y su esposa María Guasch de Durand.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>La propiedad estaba destinada a ser casa de reposo para religiosas de climas desfavorables y para organizar un orfanato u otra institución para niños.</p>
+                        
+                        <h4>Primeras Hermanas:</h4>
+                        <p> Hna. Teresa Rugiero, Hna. Bernardina Ungaro y Hna. Ubalda Piras.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p> Comenzaron con visitas a enfermos y acompañamiento religioso. En marzo de 1963, iniciaron un Jardín de Infantes privado, y al año siguiente abrieron el primer grado del "Colegio Sta. María del Rosario". También colaboraban con la catequesis sacramental en la Parroquia, visitando la cárcel y el hospital.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-22.0167" data-lng="-63.6833">Colegio "Sagrado Corazón", Yacuiba. Bolivia</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>La construcción del colegio comenzó el 4 de noviembre de 1961. El jardín de infantes y la academia se inauguraron oficialmente el 23 de marzo.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Yacuiba, capital de la Provincia del Gran Chaco Boliviano, zona fronteriza. La población padecía precariedad económica y relevante pobreza.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>Mons. Nicolai, Obispo de Tarija, solicitó la presencia urgente de las hermanas, y se optó por la creación de una escuela, cediéndoles la Academia "Santa Teresita" de corte y confección y una parte del terreno parroquial.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>Se implementó el jardín de infantes y la academia. Posteriormente, se gestionaron los ciclos Básico, Intermedio y Medio. En 1988, se creó el colegio particular con el mismo nombre. La labor incluía enseñanza de religión/moral en colegios fiscales, visita a hospitales, enfermos y la cárcel.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-21.5355" data-lng="-64.7295">Casa Madre Serafina, Tarija. Bolivia</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>La nueva comunidad se trasladó a Tarija el 12 de enero de 1977.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p> Tarija, la “Andalucía Boliviana”. Las hermanas se hicieron cargo de la escuela Tercera Orden Franciscana (T.O.F.), que había sido inaugurada en 1965 por los franciscanos.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>Padre Leonardo Bernacchi, Custodio Provincial OFM, solicitó a la Superiora Provincial Hna. Antonieta Sangermano que se hicieran cargo de la dirección de la escuela T.O.F..</p>
+                        
+                        <h4>Comunidad Establecida:</h4>
+                        <p>Hna. Mederica Bresaen (Directora), Hna. Josefina Ovando y Hna. Magdalena Aruchari.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>Se hicieron cargo de la escuela T.O.F. (que creció hasta tener todos los ciclos) y la Academia Santa Rita. Realizaron acción Pastoral en parroquias y barrios adyacentes, y colaboración en la zona rural. La casa sirvió como noviciado de 1988 a 1996.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-34.53611" data-lng="-58.74845">Noviciado "Santa Clara de Asís", José C. Paz. Argentina</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>La congregación adquirió la quinta el 6 de junio de 1963. La piedra fundamental se colocó el 24 de octubre de 1965. El noviciado fue autorizado en 1965. Un jardín de infantes se inauguró en marzo de 1968.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>CQuinta “Ñu Pora”, en José C. Paz.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>Abrir un Noviciado, ya que el anterior no podía seguir funcionando en el Colegio “Santísimo Sacramento” en Capital Federal.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>Inicialmente se usó para paseos y convivencias de alumnas. Luego se centró en la formación de novicias. Se abrió un jardín de infantes para niños de bajos recursos. Las hermanas también realizaban tareas misioneras en el Barrio Parque Jardín, preparando niños para sacramentos y apoyando a pobres y enfermos.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-24.79376" data-lng="-65.42012">Noviciado "Santa Clara", Salta Capital. Argentina</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p> Se adquirió e inauguró el 4 de junio de 1983.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p> Salta Capital. Se adquirieron dos propiedades, una de ellas con la capilla “San Juan Bosco”, que había sido profanada en los 70s y cuya presencia buscaba ser un acto de desagravio.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>Se eligió Salta por la abundancia de vocaciones en el norte argentino, su vinculación con el sur de Bolivia y la fe del pueblo salteño.</p>
+                        
+                        <h4>Primeras Hermanas:</h4>
+                        <p>Madre Pascualina Munno (Maestra de novicias), Hna. Alberta Munno (Superiora), Hna. Inés Delgadillo, Hna. Apolonia y tres novicias de primer año.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>Formación de las hermanas. Realizaron una fecunda tarea apostólica en barrios periféricos (Villa Cristina, Villa Lavalle). Esta comunidad se transformó en un punto central de comunicación y asistencia médica y formativa para las hermanas de Bolivia.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-29.2000" data-lng="-67.0667">Comunidad "El Salvador", Sañogasta. La Rioja. Argentina</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>Las hermanas llegaron el 14 de marzo de 1984.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Sañogasta, La Rioja, clima árido. Se instalaron en una vieja y deteriorada casona donada a la diócesis.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>El Obispo Mons. Bernardo Witte solicitó la colaboración para una amplia tarea evangelizadora con opción preferencial por los más pobres y para la promoción de las jóvenes, quienes sufrían múltiples abusos.</p>
+                        
+                        <h4>Primeras Hermanas:</h4>
+                        <p>Hna. Teresa Gutiérrez (Superiora), Hna. Carmela Ciarlante y Hna. Marlene Aguilera.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>Se dedicaron a la evangelización, visitando casa por casa, organizando la catequesis en el Colegio Secundario y participando activamente en la Parroquia “San Sebastián” y parajes como Nonogasta y Chilecito.</p>
+                        
+                        <h4>Cierre:</h4>
+                        <p>Dejaron la comunidad el 26 de diciembre de 1992, debido a la extrema austeridad, la falta de seguridad en la vivienda y el retiro de Mons. Witte, quien no podía asegurar el sostenimiento espiritual de las hermanas.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-25.2667" data-lng="-65.4667">Fraternidad "Santa Clara", Coronel Moldes. Salta. Argentina</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>10 de marzo de 1993</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Coronel Moldes, Salta.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>Se estableció como una presencia “ad experimentum” por un año, buscando acrecentar el empuje misionero de la Provincia.</p>
+                        
+                        <h4>Comunidad Establecida:</h4>
+                        <p>Hermanas Benjamina Bonotti y Marta Ventura.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>Acompañamiento de familias a través de visitas domiciliarias, formación de catequistas y colaboración con el apostolado de la Legión de María. Al finalizar el año, el Consejo Provincial decidió no renovar el convenio.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-51.62539" data-lng="-69.22911">Comunidad "Nuestra Señora de Fátima", Río Gallegos. Santa Cruz. Argentina</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>8 de marzo de 1999.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Río Gallegos, Patagonia Sur.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>La congregación de las Hermanas Esclavas del Divino Corazón entregó la obra del Colegio “Ntra. Sra. de Fátima” debido a la escasez de vocaciones y la edad avanzada de sus miembros.</p>
+                        
+                        <h4>Primeras Hermanas:</h4>
+                        <p>Hna. Teresa Juanaz (Superiora y Rectora), Hna. Ana María Galarza, Hna. María Estela Colparis y Hna. Dora Lía Chaile.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>Asumieron la dirección del Colegio. El trabajo inicial se enfocó en la inserción de la espiritualidad francis-clareana-serafiniana en la comunidad educativa. Colaboraron en la catequesis familiar en la Parroquia y la Capilla "San Francisco y Santa Clara". Esta comunidad se convirtió en plataforma de asistencia para las comunidades futuras en el sur de Argentina.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-53.7875" data-lng="-67.7095">Comunidad "Madre Serafina", Río Grande. Tierra del Fuego. Argentina</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>Las misioneras llegaron el 9 de marzo de 2001. La inauguración fue el 19 de marzo de 2001.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Río Grande, Tierra del Fuego. Es una ciudad ventosa.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>El Pbro. Luis Ascona solicitó a la Superiora Provincial extender la presencia del carisma, con la aprobación del Obispo Mons. Alejandro Antonio Buccolini, para que fueran “sagrarios vivientes” en estas tierras.</p>
+                        
+                        <h4>Comunidad Establecida:</h4>
+                        <p>Hna. Eva Villaroel (Superiora), Hna. Patricia Tirado, Hna. Andrea Moreno.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>La misión fue amplia y fecunda. Se enfocaron en la formación de niños y jóvenes misioneros (IAM, Grupo Juvenil San Francisco), y en la coordinación de la catequesis en la Pquia. "Sagrada Familia". También ofrecieron apoyo pastoral a la ciudad de Ushuaia, sentando las bases para una futura comunidad allí.</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-54.8341" data-lng="-68.3807">Comunidad "San Francisco", Ushuaia. Tierra del Fuego. Argentina</button>
+                    <div class="acordeon-contenido">
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Ushuaia, Tierra del Fuego. La ciudad más austral del mundo.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>Apoyo pastoral y evangelización en la comunidad de Ushuaia, continuando la obra misionera iniciada desde Río Grande.</p>
+                    </div>
+
+
                 </div>
             </div>
-            <div class="acordeon-item">
-                <button class="acordeon-titulo" data-lat="-24.7859" data-lng="-65.4117">1ra Comunidad</button>
-                <div class="acordeon-contenido">
-                    <p>La primer comunidad fue establecida en el año ... (agregar informacion)</p>
-                </div>
-            </div>
-            <div class="acordeon-item">
-                <button class="acordeon-titulo" data-lat="-24.7859" data-lng="-65.4117">2da Comunidad</button>
-                <div class="acordeon-contenido">
-                    <p>La segunda comunidad fue establecida en el año ... (agregar informacion)</p>
-                </div>
-            </div>
-            <div class="acordeon-item">
-                <button class="acordeon-titulo" data-lat="-24.7859" data-lng="-65.4117">3ra Comunidad</button>
-                <div class="acordeon-contenido">
-                    <p>La tercera comunidad fue establecida en el año ... (agregar informacion)</p>
-                </div>
+            <div class="mapa-container">
+                <div id="mapa-historia"></div>
             </div>
         </div>
-        <div class="mapa-container">
-            <iframe
-                id="mapa"
-                width="100%"
-                height="350"
-                frameborder="0"
-                style="border:0"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-58.3816,-34.6037,-58.3816,-34.6037&layer=mapnik&marker=-34.6037,-58.3816"
-                allowfullscreen>
-            </iframe>
-        </div>
-        
     </section>
 
-    <!-- Galeria de Imágenes -->
+    <!-- Galeria de Imágenes - Carrusel -->
             <section id="galeria" class="galeria">
                 <h2>Galería de fotos</h2>
-                <div class="galeria-imagenes">
-                    <img src="imagenes/foto1.jpg" alt="Foto o imagen 1" />
-                    <img src="imagenes/foto2.jpg" alt="Foto o imagen 2" />
-                    <img src="imagenes/foto3.jpg" alt="Foto o imagen 3" />
+                <div class="carrusel-container">
+                    <button class="carrusel-btn carrusel-btn-prev" aria-label="Foto anterior">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    
+                    <div class="carrusel-imagenes">
+                        <div class="carrusel-slide activo">
+                            <img src="../IMG/novic.frente.jpeg" alt="Noviciado Santa Clara - Salta" />
+                            <div class="carrusel-caption">Noviciado Santa Clara - Salta Capital</div>
+                        </div>
+                        <div class="carrusel-slide">
+                            <img src="../IMG/tartagal.frente.jpeg" alt="Colegio Santa Catalina - Tartagal" />
+                            <div class="carrusel-caption">Colegio Santa Catalina de Bolonia - Tartagal</div>
+                        </div>
+                        <div class="carrusel-slide">
+                            <img src="../IMG/JCP.frente.jpeg" alt="Comunidad Santa Clara - José C. Paz" />
+                            <div class="carrusel-caption">Comunidad Santa Clara - José C. Paz</div>
+                        </div>
+                        <div class="carrusel-slide">
+                            <img src="../IMG/CABA-frente.jpeg" alt="Comunidad Santísimo Sacramento - CABA" />
+                            <div class="carrusel-caption">Comunidad Santísimo Sacramento - Buenos Aires</div>
+                        </div>
+                        <div class="carrusel-slide">
+                            <img src="../IMG/NSF.frente.jpeg" alt="Colegio Nuestra Señora de Fátima - Río Gallegos" />
+                            <div class="carrusel-caption">Colegio Nuestra Señora de Fátima - Río Gallegos</div>
+                        </div>
+                        <div class="carrusel-slide">
+                            <img src="../IMG/frente.rosario.jpg" alt="Colegio Santa María del Rosario - Rosario de Lerma" />
+                            <div class="carrusel-caption">Colegio Santa María del Rosario - Rosario de Lerma</div>
+                        </div>
+                    </div>
+                    
+                    <button class="carrusel-btn carrusel-btn-next" aria-label="Foto siguiente">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                    
+                    <div class="carrusel-indicadores">
+                        <button class="indicador activo" data-slide="0" aria-label="Ir a foto 1"></button>
+                        <button class="indicador" data-slide="1" aria-label="Ir a foto 2"></button>
+                        <button class="indicador" data-slide="2" aria-label="Ir a foto 3"></button>
+                        <button class="indicador" data-slide="3" aria-label="Ir a foto 4"></button>
+                        <button class="indicador" data-slide="4" aria-label="Ir a foto 5"></button>
+                        <button class="indicador" data-slide="5" aria-label="Ir a foto 6"></button>
+                    </div>
                 </div>
             </section>
 
             <!-- Sección Gobierno Provincial con Superiora arriba y Consejeras abajo -->
 <section class="gobierno-provincial">
     <h2>Integrantes del Gobierno Provincial</h2>
+    
+    <!-- Carrusel de fotos del gobierno -->
+    <div class="gobierno-carrusel-container">
+        <button class="gobierno-carrusel-btn gobierno-btn-prev" aria-label="Foto anterior">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+        </button>
+        
+        <div class="gobierno-carrusel-imagenes">
+            <div class="gobierno-carrusel-slide activo">
+                <img src="../IMG/gobierno-completo.jpg" alt="Gobierno Provincial completo" />
+                <div class="gobierno-carrusel-caption">Gobierno Provincial</div>
+            </div>
+            <div class="gobierno-carrusel-slide">
+                <img src="../IMG/adriana-ruis.jpg" alt="Hna. Adriana Ruis" />
+                <div class="gobierno-carrusel-caption">Hna. Adriana Ruis - Superiora Provincial</div>
+            </div>
+            <div class="gobierno-carrusel-slide">
+                <img src="../IMG/rosa-canizares.jpg" alt="Hna. Rosa Cañizares" />
+                <div class="gobierno-carrusel-caption">Hna. Rosa Cañizares - Vicaria</div>
+            </div>
+            <div class="gobierno-carrusel-slide">
+                <img src="../IMG/vanesa-tarifa.jpg" alt="Hna. Vanesa Tarifa" />
+                <div class="gobierno-carrusel-caption">Hna. Vanesa Tarifa - 2° Consejera</div>
+            </div>
+            <div class="gobierno-carrusel-slide">
+                <img src="../IMG/rosa-choque.jpg" alt="Hna. Rosa Choque" />
+                <div class="gobierno-carrusel-caption">Hna. Rosa Choque - 3° Consejera</div>
+            </div>
+        </div>
+        
+        <button class="gobierno-carrusel-btn gobierno-btn-next" aria-label="Foto siguiente">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+        </button>
+        
+        <div class="gobierno-carrusel-indicadores">
+            <button class="gobierno-indicador activo" data-slide="0" aria-label="Ir a foto 1"></button>
+            <button class="gobierno-indicador" data-slide="1" aria-label="Ir a foto 2"></button>
+            <button class="gobierno-indicador" data-slide="2" aria-label="Ir a foto 3"></button>
+            <button class="gobierno-indicador" data-slide="3" aria-label="Ir a foto 4"></button>
+            <button class="gobierno-indicador" data-slide="4" aria-label="Ir a foto 5"></button>
+        </div>
+    </div>
+    
+    <!-- Tarjetas de cargos -->
     <div class="gobierno-superiora">
-        <div class="cargo-card">
+        <div class="cargo-card cargo-card-compacta">
             <h3>Superiora Provincial</h3>
             <p class="nombre">Hna. Adriana Ruis</p>
         </div>
     </div>
     <div class="gobierno-grid">
-        <div class="cargo-card">
+        <div class="cargo-card cargo-card-compacta">
             <h3>Vicaria</h3>
             <p class="nombre">Hna. Rosa Cañizares</p>
         </div>
-        <div class="cargo-card">
+        <div class="cargo-card cargo-card-compacta">
             <h3>2° Consejera</h3>
             <p class="nombre">Hna. Vanesa Tarifa</p>
         </div>
-        <div class="cargo-card">
+        <div class="cargo-card cargo-card-compacta">
             <h3>3° Consejera</h3>
             <p class="nombre">Hna. Rosa Choque</p>
         </div>
@@ -170,7 +555,7 @@
                 <p>© 2025 Congregación Clarisas Franciscanas Misioneras del Santísimo Sacramento </p>
             </div>
         </footer>
-        <script  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script src="../JS/script.js"></script>
     </body>
 </html>

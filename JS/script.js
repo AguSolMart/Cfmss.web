@@ -314,32 +314,38 @@ document.addEventListener('DOMContentLoaded', function() {
             clearInterval(intervaloCarrusel);
         }
         
-        // Botones de navegación
-        btnNext.addEventListener('click', () => {
-            detenerCarrusel();
-            siguienteSlide();
-            iniciarCarrusel();
-        });
-        
-        btnPrev.addEventListener('click', () => {
-            detenerCarrusel();
-            slideAnterior();
-            iniciarCarrusel();
-        });
-        
-        // Indicadores
-        indicadores.forEach((indicador, indice) => {
-            indicador.addEventListener('click', () => {
+        // Botones de navegación (solo si existen)
+        if (btnNext && btnPrev) {
+            btnNext.addEventListener('click', () => {
                 detenerCarrusel();
-                mostrarSlide(indice);
+                siguienteSlide();
                 iniciarCarrusel();
             });
-        });
+            
+            btnPrev.addEventListener('click', () => {
+                detenerCarrusel();
+                slideAnterior();
+                iniciarCarrusel();
+            });
+        }
         
-        // Pausar al pasar el mouse
+        // Indicadores (solo si existen)
+        if (indicadores.length > 0) {
+            indicadores.forEach((indicador, indice) => {
+                indicador.addEventListener('click', () => {
+                    detenerCarrusel();
+                    mostrarSlide(indice);
+                    iniciarCarrusel();
+                });
+            });
+        }
+        
+        // Pausar al pasar el mouse (solo si existe el contenedor)
         const carruselContainer = document.querySelector('.carrusel-container');
-        carruselContainer.addEventListener('mouseenter', detenerCarrusel);
-        carruselContainer.addEventListener('mouseleave', iniciarCarrusel);
+        if (carruselContainer) {
+            carruselContainer.addEventListener('mouseenter', detenerCarrusel);
+            carruselContainer.addEventListener('mouseleave', iniciarCarrusel);
+        }
         
         // Iniciar el carrusel automático
         iniciarCarrusel();
@@ -456,6 +462,132 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.classList.add('activo');
             }
         });
+    });
+
+    // Carrusel automático del hero SOLAMENTE en index.html
+    const heroCarruselContainer = document.querySelector('.hero-carrusel');
+    
+    if (heroCarruselContainer) {
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        
+        if (heroSlides.length > 0) {
+            let slideActual = 0;
+            
+            // Asegurar que el primer slide tenga la clase activo
+            heroSlides[0].classList.add('activo');
+            
+            function siguienteSlide() {
+                // Quitar clase activo del slide actual
+                heroSlides[slideActual].classList.remove('activo');
+                
+                // Pasar al siguiente slide
+                slideActual = (slideActual + 1) % heroSlides.length;
+                
+                // Agregar clase activo al nuevo slide
+                heroSlides[slideActual].classList.add('activo');
+            }
+            
+            // Cambiar cada 4 segundos
+            setInterval(siguienteSlide, 4000);
+            
+        }
+    }
+
+    // ===== CARRUSELES HISTÓRICOS =====
+    const carruselesHistoricos = document.querySelectorAll('.fotos-historicas');
+    
+    carruselesHistoricos.forEach((seccionCarrusel) => {
+        const carruselContainer = seccionCarrusel.querySelector('.carrusel-historico');
+        const slides = seccionCarrusel.querySelectorAll('.carrusel-historico-slide');
+        const btnPrev = seccionCarrusel.querySelector('.carrusel-btn-prev-hist');
+        const btnNext = seccionCarrusel.querySelector('.carrusel-btn-next-hist');
+        const indicadores = seccionCarrusel.querySelectorAll('.indicador-hist');
+        
+        if (slides.length > 0) {
+            let slideActual = 0;
+            let intervaloAuto;
+            
+            // Función para mostrar un slide específico
+            function mostrarSlide(index) {
+                // Ocultar todos los slides
+                slides.forEach(slide => {
+                    slide.style.opacity = '0';
+                    slide.style.zIndex = '1';
+                });
+                
+                // Remover clase activa de todos los indicadores
+                indicadores.forEach(ind => ind.classList.remove('activo'));
+                
+                // Mostrar el slide actual
+                slides[index].style.opacity = '1';
+                slides[index].style.zIndex = '2';
+                
+                // Activar indicador correspondiente
+                if (indicadores[index]) {
+                    indicadores[index].classList.add('activo');
+                }
+                
+                slideActual = index;
+            }
+            
+            // Función para ir al siguiente slide
+            function siguienteSlide() {
+                const nuevoIndex = (slideActual + 1) % slides.length;
+                mostrarSlide(nuevoIndex);
+            }
+            
+            // Función para ir al slide anterior
+            function anteriorSlide() {
+                const nuevoIndex = (slideActual - 1 + slides.length) % slides.length;
+                mostrarSlide(nuevoIndex);
+            }
+            
+            // Función para iniciar avance automático
+            function iniciarAuto() {
+                intervaloAuto = setInterval(siguienteSlide, 5000);
+            }
+            
+            // Función para detener avance automático
+            function detenerAuto() {
+                clearInterval(intervaloAuto);
+            }
+            
+            // Event listeners para botones
+            if (btnPrev) {
+                btnPrev.addEventListener('click', () => {
+                    anteriorSlide();
+                    detenerAuto();
+                    iniciarAuto(); // Reiniciar el temporizador
+                });
+            }
+            
+            if (btnNext) {
+                btnNext.addEventListener('click', () => {
+                    siguienteSlide();
+                    detenerAuto();
+                    iniciarAuto(); // Reiniciar el temporizador
+                });
+            }
+            
+            // Event listeners para indicadores
+            indicadores.forEach((indicador, index) => {
+                indicador.addEventListener('click', () => {
+                    mostrarSlide(index);
+                    detenerAuto();
+                    iniciarAuto(); // Reiniciar el temporizador
+                });
+            });
+            
+            // Pausar en hover
+            if (carruselContainer) {
+                carruselContainer.addEventListener('mouseenter', detenerAuto);
+                carruselContainer.addEventListener('mouseleave', iniciarAuto);
+            }
+            
+            // Inicializar
+            mostrarSlide(0);
+            iniciarAuto();
+        }
     });
 
     console.log('All scripts initialized successfully.');

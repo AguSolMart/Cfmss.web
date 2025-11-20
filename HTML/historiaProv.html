@@ -8,12 +8,16 @@
         <link rel="stylesheet" href="../CSS/mediaqueries.css">
         <link rel="stylesheet" href="../CSS/styles.css">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     </head>
     <body>
         <header class="header">
-            <div class="logo"><img src="../IMG/Logo sin fondo (2).png" /></div>
-            <h1 class="header-titulo">Historia de la provincia</h1>
+            <div class="logo"><img src="../IMG/Logo provinciaJS.2025 (2).png" /></div>
+            <div class="header-text">
+                <h1 class="header-titulo">Provincia "Jesús Sacramentado"</h1>
+                <p class="header-subtitulo">Clarisas Franciscanas Misioneras del Santísimo Sacramento</p>
+            </div>
 
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +38,7 @@
                     <li><a href="espiritualidad.html">Espiritualidad</a></li>
                     <li><a href="cdad-colegios.html">Comunidades y Colegios</a></li>
                     <li><a href="mundo.html">En el Mundo</a></li>
-                    <li><a href="oraciones-docs.html">Oraciones y Documentos</a></li>
+                    <li><a href="oraciones-docs.html">Oraciones</a></li>
                     <li><a href="historiaInst.html">Historia del Instituto</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
@@ -51,6 +55,130 @@
                     <h2 class="hero-titulo">Bienvenidos a la Historia de la Provincia</h2>
                     <p class="hero-descripcion">ETexto descriptivo.</p>
                     </div>
+            </section>
+
+            <!-- Primera Galería de Fotos Históricas -->
+            <section class="fotos-historicas">
+                <h2>Nuestra Historia en Imágenes</h2>
+                <div class="carrusel-historico">
+                    <button class="carrusel-btn carrusel-btn-prev-hist" aria-label="Foto anterior">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    
+                    <div class="carrusel-historico-imagenes">
+                        <div class="carrusel-historico-slide activo">
+                            <img src="../IMG/Hist.prov/HIST.prov (1).jpg" alt="Foto histórica 1" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (2).jpg" alt="Foto histórica 2" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (3).jpg" alt="Foto histórica 3" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (4).jpg" alt="Foto histórica 4" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (5).jpg" alt="Foto histórica 5" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (6).jpg" alt="Foto histórica 6" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (7).jpg" alt="Foto histórica 7" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (8).jpg" alt="Foto histórica 8" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (9).jpg" alt="Foto histórica 9" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (10).jpg" alt="Foto histórica 10" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (11).jpg" alt="Foto histórica 11" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (12).jpg" alt="Foto histórica 12" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (13).jpg" alt="Foto histórica 13" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (14).jpg" alt="Foto histórica 14" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (15).jpg" alt="Foto histórica 15" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (16).jpg" alt="Foto histórica 16" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (17).jpg" alt="Foto histórica 17" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (18).jpg" alt="Foto histórica 18" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (19).jpg" alt="Foto histórica 19" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (20).jpg" alt="Foto histórica 20" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (21).jpg" alt="Foto histórica 21" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (22).jpg" alt="Foto histórica 22" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (23).jpg" alt="Foto histórica 23" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (24).jpg" alt="Foto histórica 24" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (25).jpg" alt="Foto histórica 25" />
+                        </div>
+                    </div>
+                    
+                    <button class="carrusel-btn carrusel-btn-next-hist" aria-label="Foto siguiente">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                    
+                    <div class="carrusel-historico-indicadores">
+                        <button class="indicador-hist activo" data-slide="0" aria-label="Ir a foto 1"></button>
+                        <button class="indicador-hist" data-slide="1" aria-label="Ir a foto 2"></button>
+                        <button class="indicador-hist" data-slide="2" aria-label="Ir a foto 3"></button>
+                        <button class="indicador-hist" data-slide="3" aria-label="Ir a foto 4"></button>
+                        <button class="indicador-hist" data-slide="4" aria-label="Ir a foto 5"></button>
+                        <button class="indicador-hist" data-slide="5" aria-label="Ir a foto 6"></button>
+                        <button class="indicador-hist" data-slide="6" aria-label="Ir a foto 7"></button>
+                        <button class="indicador-hist" data-slide="7" aria-label="Ir a foto 8"></button>
+                        <button class="indicador-hist" data-slide="8" aria-label="Ir a foto 9"></button>
+                        <button class="indicador-hist" data-slide="9" aria-label="Ir a foto 10"></button>
+                        <button class="indicador-hist" data-slide="10" aria-label="Ir a foto 11"></button>
+                        <button class="indicador-hist" data-slide="11" aria-label="Ir a foto 12"></button>
+                        <button class="indicador-hist" data-slide="12" aria-label="Ir a foto 13"></button>
+                        <button class="indicador-hist" data-slide="13" aria-label="Ir a foto 14"></button>
+                        <button class="indicador-hist" data-slide="14" aria-label="Ir a foto 15"></button>
+                        <button class="indicador-hist" data-slide="15" aria-label="Ir a foto 16"></button>
+                        <button class="indicador-hist" data-slide="16" aria-label="Ir a foto 17"></button>
+                        <button class="indicador-hist" data-slide="17" aria-label="Ir a foto 18"></button>
+                        <button class="indicador-hist" data-slide="18" aria-label="Ir a foto 19"></button>
+                        <button class="indicador-hist" data-slide="19" aria-label="Ir a foto 20"></button>
+                        <button class="indicador-hist" data-slide="20" aria-label="Ir a foto 21"></button>
+                        <button class="indicador-hist" data-slide="21" aria-label="Ir a foto 22"></button>
+                        <button class="indicador-hist" data-slide="22" aria-label="Ir a foto 23"></button>
+                        <button class="indicador-hist" data-slide="23" aria-label="Ir a foto 24"></button>
+                        <button class="indicador-hist" data-slide="24" aria-label="Ir a foto 25"></button>
+                    </div>
+                </div>
             </section>
 
             <!-- Sección acordeón -->
@@ -379,6 +507,46 @@
                         <h4>Actividad:</h4>
                         <p>Apoyo pastoral y evangelización en la comunidad de Ushuaia, continuando la obra misionera iniciada desde Río Grande.</p>
                     </div>
+                    <button class="acordeon-titulo" data-lat="-51.62539" data-lng="-69.22911">Comunidad del Postulantado “Madre Serafina”, Tucumán</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>29 de febrero de 2008.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>La comunidad se ubicó en la provincia de Tucumán, en un contexto de periferia. Mantenían contacto y habían realizado frecuentes misiones en la jurisdicción parroquial del P. José Mijalchyk. La casa inicial fue prestada por la Parroquia y se encontraba en condiciones inadecuadas, aunque mejoró con el tiempo gracias al apoyo del Gobierno Provincial y la Superiora Provincial, Hna. Teresa Juanaz. La situación se vio complejizada por varios hechos de inseguridad.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>La fundación fue el resultado de las decisiones del Xº Capítulo Provincial. El objetivo era buscar una mayor inserción entre los más pobres y favorecer el discernimiento de las jóvenes en el marco de una realidad concreta. También era necesario separar esta etapa de formación del noviciado, ya que ambas coexistían en una sola residencia en Salta. La apertura se concretó por la propuesta del P. José Mijalchyk, con el aval del arzobispo de Tucumán, Mons. Luis Villalba.</p>
+                        
+                        <h4>Primeras Hermanas:</h4>
+                        <p>La primera comunidad estuvo formada por las hermanas Mirta Cruz (Superiora) y Patricia Tirado (ecónoma), junto a las jóvenes formandas Mabel y Vanesa. Posteriormente se unió la Hna. Soledad Nava.</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>La comunidad estaba destinada a fortalecer el discernimiento y el crecimiento vocacional de las jóvenes aspirantes y postulantes. Además de la formación, realizaban una amplia tarea misionera, acompañando a la comunidad de “Las Tablas”. Sus actividades incluían visitas a las familias, y la coordinación de la Catequesis y de la “Infancia y Adolescencia Misionera” (IAM).</p>
+
+                        <h4>Fecha de Cierre:</h4>
+                        <p>9 de febrero de 2011</p>
+                    </div>
+                    <button class="acordeon-titulo" data-lat="-51.62539" data-lng="-69.22911">Comunidad “Madre del Amor Hermoso”, Quitilipi. Chaco</button>
+                    <div class="acordeon-contenido">
+                        <h4>Fecha de Llegada/Inicio:</h4>
+                        <p>8 de abril de 2008.</p>
+                        
+                        <h4>Ubicación y Contexto:</h4>
+                        <p>Quitilipi, provincia del Chaco, Argentina. La provincia del Chaco cuenta con una gran población originaria (wichís, qom, mocovíes) y descendientes de inmigrantes de Europa Central y Oriental. La realidad social de Quitilipi es de extrema pobreza. Los problemas que persisten incluyen alta mortalidad infantil, desnutrición, analfabetismo, deserción escolar, violencia familiar, abuso, prostitución, hacinamiento habitacional y abandono.</p>
+                        
+                        <h4>Motivo de la Fundación:</h4>
+                        <p>La decisión fue impulsada por el renovado ardor misionero suscitado por el X° Capítulo Provincial, buscando crecer en experiencias de inserción. Se aceptó la propuesta de hacerse cargo de la obra “Casita del Sol Naciente”, un centro de día, realizada por el párroco Martín Zapararte. Esto respondía a los anhelos de una opción preferencial por los más pobres, especialmente la niñez en riesgo, lo cual se veía como un deseo de Madre Serafina.</p>
+                        
+                        <h4>Primeras Hermanas:</h4>
+                        <p>La nueva comunidad quedó constituida por la Hna. Fátima de Salles (superiora local), la Hna. Eva Villaroel, la Hna. Marta Ventura y la Hna. Vanesa Tarifa (Juniora).</p>
+                        
+                        <h4>Actividad:</h4>
+                        <p>La principal actividad es la gestión de la “Casita del Sol Naciente”, un centro de día. El objetivo de esta obra es la contención del niños en riesgo, insertándolos en el sistema escolar, cultivando valores y atendiendo sus necesidades de alimento, vestimenta y útiles escolares. Las religiosas también se dedican a una esmerada formación cristiana, moral y de hábitos de higiene. La pastoral se amplía a parajes cercanos, colaborando con la catequesis y la animación litúrgica en diversas capillas. Además, buscan apoyar a las familias facilitando la construcción de mono-ambientes para mejorar la calidad habitacional.</p>
+
+                        <h4>Fecha de Cierre:</h4>
+                        <p>Abril de 2024</p>
+                    </div>
 
 
                 </div>
@@ -389,56 +557,126 @@
         </div>
     </section>
 
-    <!-- Galeria de Imágenes - Carrusel -->
-            <section id="galeria" class="galeria">
-                <h2>Galería de fotos</h2>
-                <div class="carrusel-container">
-                    <button class="carrusel-btn carrusel-btn-prev" aria-label="Foto anterior">
+            <!-- Segunda Galería de Fotos Históricas -->
+            <section class="fotos-historicas">
+                <h2>Galería de Momentos Históricos</h2>
+                <div class="carrusel-historico">
+                    <button class="carrusel-btn carrusel-btn-prev-hist" aria-label="Foto anterior">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                         </svg>
                     </button>
                     
-                    <div class="carrusel-imagenes">
-                        <div class="carrusel-slide activo">
-                            <img src="../IMG/novic.frente.jpeg" alt="Noviciado Santa Clara - Salta" />
-                            <div class="carrusel-caption">Noviciado Santa Clara - Salta Capital</div>
+                    <div class="carrusel-historico-imagenes">
+                        <div class="carrusel-historico-slide activo">
+                            <img src="../IMG/Hist.prov/HIST.prov (26).jpg" alt="Foto histórica 26" />
                         </div>
-                        <div class="carrusel-slide">
-                            <img src="../IMG/tartagal.frente.jpeg" alt="Colegio Santa Catalina - Tartagal" />
-                            <div class="carrusel-caption">Colegio Santa Catalina de Bolonia - Tartagal</div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (27).jpg" alt="Foto histórica 27" />
                         </div>
-                        <div class="carrusel-slide">
-                            <img src="../IMG/JCP.frente.jpeg" alt="Comunidad Santa Clara - José C. Paz" />
-                            <div class="carrusel-caption">Comunidad Santa Clara - José C. Paz</div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (28).jpg" alt="Foto histórica 28" />
                         </div>
-                        <div class="carrusel-slide">
-                            <img src="../IMG/CABA-frente.jpeg" alt="Comunidad Santísimo Sacramento - CABA" />
-                            <div class="carrusel-caption">Comunidad Santísimo Sacramento - Buenos Aires</div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (29).jpg" alt="Foto histórica 29" />
                         </div>
-                        <div class="carrusel-slide">
-                            <img src="../IMG/NSF.frente.jpeg" alt="Colegio Nuestra Señora de Fátima - Río Gallegos" />
-                            <div class="carrusel-caption">Colegio Nuestra Señora de Fátima - Río Gallegos</div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (30).jpg" alt="Foto histórica 30" />
                         </div>
-                        <div class="carrusel-slide">
-                            <img src="../IMG/frente.rosario.jpg" alt="Colegio Santa María del Rosario - Rosario de Lerma" />
-                            <div class="carrusel-caption">Colegio Santa María del Rosario - Rosario de Lerma</div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (31).jpg" alt="Foto histórica 31" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (32).jpg" alt="Foto histórica 32" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (33).jpg" alt="Foto histórica 33" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (34).jpg" alt="Foto histórica 34" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (35).jpg" alt="Foto histórica 35" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (36).jpg" alt="Foto histórica 36" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (37).jpg" alt="Foto histórica 37" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (38).jpg" alt="Foto histórica 38" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (39).jpg" alt="Foto histórica 39" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (40).jpg" alt="Foto histórica 40" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (41).jpg" alt="Foto histórica 41" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (42).jpg" alt="Foto histórica 42" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (43).jpg" alt="Foto histórica 43" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (44).jpg" alt="Foto histórica 44" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (45).jpg" alt="Foto histórica 45" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (1).png" alt="Foto histórica 46" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (2).png" alt="Foto histórica 47" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (3).png" alt="Foto histórica 48" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (4).png" alt="Foto histórica 49" />
+                        </div>
+                        <div class="carrusel-historico-slide">
+                            <img src="../IMG/Hist.prov/HIST.prov (5).png" alt="Foto histórica 50" />
                         </div>
                     </div>
                     
-                    <button class="carrusel-btn carrusel-btn-next" aria-label="Foto siguiente">
+                    <button class="carrusel-btn carrusel-btn-next-hist" aria-label="Foto siguiente">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                     </button>
                     
-                    <div class="carrusel-indicadores">
-                        <button class="indicador activo" data-slide="0" aria-label="Ir a foto 1"></button>
-                        <button class="indicador" data-slide="1" aria-label="Ir a foto 2"></button>
-                        <button class="indicador" data-slide="2" aria-label="Ir a foto 3"></button>
-                        <button class="indicador" data-slide="3" aria-label="Ir a foto 4"></button>
-                        <button class="indicador" data-slide="4" aria-label="Ir a foto 5"></button>
-                        <button class="indicador" data-slide="5" aria-label="Ir a foto 6"></button>
+                    <div class="carrusel-historico-indicadores">
+                        <button class="indicador-hist activo" data-slide="0" aria-label="Ir a foto 1"></button>
+                        <button class="indicador-hist" data-slide="1" aria-label="Ir a foto 2"></button>
+                        <button class="indicador-hist" data-slide="2" aria-label="Ir a foto 3"></button>
+                        <button class="indicador-hist" data-slide="3" aria-label="Ir a foto 4"></button>
+                        <button class="indicador-hist" data-slide="4" aria-label="Ir a foto 5"></button>
+                        <button class="indicador-hist" data-slide="5" aria-label="Ir a foto 6"></button>
+                        <button class="indicador-hist" data-slide="6" aria-label="Ir a foto 7"></button>
+                        <button class="indicador-hist" data-slide="7" aria-label="Ir a foto 8"></button>
+                        <button class="indicador-hist" data-slide="8" aria-label="Ir a foto 9"></button>
+                        <button class="indicador-hist" data-slide="9" aria-label="Ir a foto 10"></button>
+                        <button class="indicador-hist" data-slide="10" aria-label="Ir a foto 11"></button>
+                        <button class="indicador-hist" data-slide="11" aria-label="Ir a foto 12"></button>
+                        <button class="indicador-hist" data-slide="12" aria-label="Ir a foto 13"></button>
+                        <button class="indicador-hist" data-slide="13" aria-label="Ir a foto 14"></button>
+                        <button class="indicador-hist" data-slide="14" aria-label="Ir a foto 15"></button>
+                        <button class="indicador-hist" data-slide="15" aria-label="Ir a foto 16"></button>
+                        <button class="indicador-hist" data-slide="16" aria-label="Ir a foto 17"></button>
+                        <button class="indicador-hist" data-slide="17" aria-label="Ir a foto 18"></button>
+                        <button class="indicador-hist" data-slide="18" aria-label="Ir a foto 19"></button>
+                        <button class="indicador-hist" data-slide="19" aria-label="Ir a foto 20"></button>
+                        <button class="indicador-hist" data-slide="20" aria-label="Ir a foto 21"></button>
+                        <button class="indicador-hist" data-slide="21" aria-label="Ir a foto 22"></button>
+                        <button class="indicador-hist" data-slide="22" aria-label="Ir a foto 23"></button>
+                        <button class="indicador-hist" data-slide="23" aria-label="Ir a foto 24"></button>
+                        <button class="indicador-hist" data-slide="24" aria-label="Ir a foto 25"></button>
                     </div>
                 </div>
             </section>
@@ -447,69 +685,35 @@
 <section class="gobierno-provincial">
     <h2>Integrantes del Gobierno Provincial</h2>
     
-    <!-- Carrusel de fotos del gobierno -->
-    <div class="gobierno-carrusel-container">
-        <button class="gobierno-carrusel-btn gobierno-btn-prev" aria-label="Foto anterior">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
-        </button>
-        
-        <div class="gobierno-carrusel-imagenes">
-            <div class="gobierno-carrusel-slide activo">
-                <img src="../IMG/gobierno-completo.jpg" alt="Gobierno Provincial completo" />
-                <div class="gobierno-carrusel-caption">Gobierno Provincial</div>
-            </div>
-            <div class="gobierno-carrusel-slide">
-                <img src="../IMG/adriana-ruis.jpg" alt="Hna. Adriana Ruis" />
-                <div class="gobierno-carrusel-caption">Hna. Adriana Ruis - Superiora Provincial</div>
-            </div>
-            <div class="gobierno-carrusel-slide">
-                <img src="../IMG/rosa-canizares.jpg" alt="Hna. Rosa Cañizares" />
-                <div class="gobierno-carrusel-caption">Hna. Rosa Cañizares - Vicaria</div>
-            </div>
-            <div class="gobierno-carrusel-slide">
-                <img src="../IMG/vanesa-tarifa.jpg" alt="Hna. Vanesa Tarifa" />
-                <div class="gobierno-carrusel-caption">Hna. Vanesa Tarifa - 2° Consejera</div>
-            </div>
-            <div class="gobierno-carrusel-slide">
-                <img src="../IMG/rosa-choque.jpg" alt="Hna. Rosa Choque" />
-                <div class="gobierno-carrusel-caption">Hna. Rosa Choque - 3° Consejera</div>
-            </div>
-        </div>
-        
-        <button class="gobierno-carrusel-btn gobierno-btn-next" aria-label="Foto siguiente">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-        </button>
-        
-        <div class="gobierno-carrusel-indicadores">
-            <button class="gobierno-indicador activo" data-slide="0" aria-label="Ir a foto 1"></button>
-            <button class="gobierno-indicador" data-slide="1" aria-label="Ir a foto 2"></button>
-            <button class="gobierno-indicador" data-slide="2" aria-label="Ir a foto 3"></button>
-            <button class="gobierno-indicador" data-slide="3" aria-label="Ir a foto 4"></button>
-            <button class="gobierno-indicador" data-slide="4" aria-label="Ir a foto 5"></button>
-        </div>
-    </div>
-    
-    <!-- Tarjetas de cargos -->
+    <!-- Tarjetas de cargos con fotos -->
     <div class="gobierno-superiora">
-        <div class="cargo-card cargo-card-compacta">
+        <div class="cargo-card cargo-card-con-foto">
+            <div class="cargo-foto">
+                <img src="../IMG/Gob.prov.jpg" alt="Hna. Adriana Ruis" />
+            </div>
             <h3>Superiora Provincial</h3>
             <p class="nombre">Hna. Adriana Ruis</p>
         </div>
     </div>
     <div class="gobierno-grid">
-        <div class="cargo-card cargo-card-compacta">
-            <h3>Vicaria</h3>
+        <div class="cargo-card cargo-card-con-foto">
+            <div class="cargo-foto">
+                <img src="../IMG/vic1consejera.jpg" alt="Hna. Rosa Cañizares" />
+            </div>
+            <h3>Vicaria y 1° Consejera</h3>
             <p class="nombre">Hna. Rosa Cañizares</p>
         </div>
-        <div class="cargo-card cargo-card-compacta">
+        <div class="cargo-card cargo-card-con-foto">
+            <div class="cargo-foto">
+                <img src="../IMG/2consejera.jpg" alt="Hna. Vanesa Tarifa" class="foto-vanesa" />
+            </div>
             <h3>2° Consejera</h3>
             <p class="nombre">Hna. Vanesa Tarifa</p>
         </div>
-        <div class="cargo-card cargo-card-compacta">
+        <div class="cargo-card cargo-card-con-foto">
+            <div class="cargo-foto">
+                <img src="../IMG/3consejera.jpg" alt="Hna. Rosa Choque" />
+            </div>
             <h3>3° Consejera</h3>
             <p class="nombre">Hna. Rosa Choque</p>
         </div>
@@ -521,38 +725,40 @@
         <!-- footer -->
         <footer>
             <div class="links-footer">
-                <img class="logo-footer" src="imagenes/foto1.jpg" alt="Foto o imagen 1" />
-                <a href="#" class="header-logo"> Texto-pie de página </a>
+                <div class="footer-logo-container">
+                    <img class="logo-footer" src="../IMG/Logo provinciaJS.2025 (2).png" alt="Logo CFMSS" />
+                </div>
 
-            <nav>
-                <ul class="nav-links-footer">
-                    <li><a href="index.html">Inicio </a></li>
-                    <li><a href="HTML/historiaProv.html">Historia de la Provincia</a></li>
-                    <li><a href="HTML/espiritualidad.html">Espiritualidad</a></li>
-                    <li><a href="HTML/cdad-colegios.html">Comunidades y Colegios</a></li>
-                    <li><a href="HTML/mundo.html">En el Mundo</a></li>
-                    <li><a href="HTML/oraciones-docs.html">Oraciones y Documentos</a></li>
-                    <li><a href="HTML/historiaInst.html">Historia del Instituto</a></li>
-                    <li><a href="HTML/contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
+                <nav>
+                    <ul class="nav-links-footer">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="historiaProv.html">Historia de la Provincia</a></li>
+                        <li><a href="espiritualidad.html">Espiritualidad</a></li>
+                        <li><a href="cdad-colegios.html">Comunidades y Colegios</a></li>
+                        <li><a href="mundo.html">En el Mundo</a></li>
+                        <li><a href="oraciones-docs.html">Oraciones</a></li>
+                        <li><a href="historiaInst.html">Historia del Instituto</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
 
-            <nav>
-                <ul class="rrss">
-                    <li>
-                        <a href="#"><i class="----face--"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="----insta--"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="------"></i></a>
-                    </li>
-                </ul>
-            </nav>
+                <nav class="rrss-nav">
+                    <h4>Síguenos</h4>
+                    <ul class="rrss">
+                        <li>
+                            <a href="https://www.facebook.com/people/Clarisa-Franciscana/100013383693116/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/clarisafranciscana/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/clarisas_mis" target="_blank" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
             <div class="copyright">
-                <p>© 2025 Congregación Clarisas Franciscanas Misioneras del Santísimo Sacramento </p>
+                <p>© 2025 Congregación Clarisas Franciscanas Misioneras del Santísimo Sacramento</p>
             </div>
         </footer>
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

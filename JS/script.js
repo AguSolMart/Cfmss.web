@@ -222,25 +222,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Contact Form (resto igual)
-    const form = document.getElementById('contacto-form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const nombre = formData.get('nombre')?.trim();
-            const email = formData.get('email')?.trim();
-            const consulta = formData.get('consulta')?.trim();
-
-            if (!nombre || !email || !consulta || !email.includes('@')) {
-                alert('Por favor, completa todos los campos con datos válidos.');
-                return;
-            }
-
-            alert(`¡Gracias, ${nombre}! Mensaje enviado.`);
-            form.reset();
-        });
-    }
+    // Contact Form - FormSubmit maneja el envío automáticamente
+    // No necesitamos JavaScript aquí, el formulario se envía directamente
 
     // Smooth Scrolling (resto igual)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

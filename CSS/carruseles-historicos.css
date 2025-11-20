@@ -1,0 +1,161 @@
+/* Galería de Fotos Históricas */
+.fotos-historicas {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: var(--accent-color4);
+    border-radius: var(--rounded-lg);
+    box-shadow: var(--shadow);
+}
+
+.fotos-historicas h2 {
+    font-family: var(--font-family), serif;
+    font-size: 2rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.carrusel-historico {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--rounded-lg);
+    background: #000;
+}
+
+.carrusel-historico-imagenes {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.carrusel-historico-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.carrusel-historico-slide.activo {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carrusel-historico-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Botones de navegación */
+.carrusel-btn-prev-hist,
+.carrusel-btn-next-hist {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.carrusel-btn-prev-hist {
+    left: 20px;
+}
+
+.carrusel-btn-next-hist {
+    right: 20px;
+}
+
+.carrusel-btn-prev-hist:hover,
+.carrusel-btn-next-hist:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carrusel-btn-prev-hist svg,
+.carrusel-btn-next-hist svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--accent-color);
+}
+
+/* Indicadores */
+.carrusel-historico-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.indicador-hist {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.indicador-hist:hover {
+    transform: scale(1.2);
+    background: var(--accent-color2);
+}
+
+.indicador-hist.activo {
+    background: var(--accent-color);
+    width: 14px;
+    height: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carrusel-historico-imagenes {
+        height: 400px;
+    }
+    
+    .carrusel-btn-prev-hist,
+    .carrusel-btn-next-hist {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .carrusel-btn-prev-hist {
+        left: 10px;
+    }
+    
+    .carrusel-btn-next-hist {
+        right: 10px;
+    }
+    
+    .carrusel-btn-prev-hist svg,
+    .carrusel-btn-next-hist svg {
+        width: 20px;
+        height: 20px;
+    }
+}

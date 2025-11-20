@@ -175,7 +175,9 @@ p, li, td, th, span, div, label, input, textarea, button, select, a {
     box-shadow: none;
     padding: 0;
     flex-grow: 1;
-    margin-left: 2rem;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-links {

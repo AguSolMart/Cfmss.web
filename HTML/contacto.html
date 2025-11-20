@@ -37,7 +37,7 @@
         <!-- Hero -->
         <section id="hero">
             <div class="hero-img">
-                <img src="../IMG/contacto-hero.jpg" />
+                <img src="../IMG/contacto.jpg" />
             </div>
             <div class="hero-texto">
                 <h2 class="hero-titulo">Contacto</h2>
@@ -48,12 +48,17 @@
         <!-- Sección Formulario -->
         <section class="seccion-contacto">
             <h2>Envíanos un Mensaje</h2>
-            <form id="contacto-form" class="form-contacto">
-                <input type="text" name="nombre" placeholder="Nombre y Apellido" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="consulta" placeholder="Escribe tu consulta" rows="5" required></textarea>
+            <form id="contacto-form" class="form-contacto" action="https://formsubmit.co/clarisamisioneraargentina@gmail.com" method="POST">
+                <!-- Configuración de FormSubmit -->
+                <input type="hidden" name="_subject" value="Nueva consulta desde el sitio web CFMSS">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre y Apellido" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <textarea name="consulta" id="consulta" placeholder="Escribe tu consulta" rows="5" required></textarea>
                 <button type="submit" class="btn-submit">Enviar Mensaje</button>
             </form>
+            <div id="form-status" class="form-status"></div>
         </section>
 
         <!-- Sección Información de Contacto -->
@@ -62,16 +67,15 @@
             <div class="info-grid">
                 <div class="info-item">
                     <h3>Sede Provincial</h3>
-                    <p>Dirección: Calle (Agregar), Salta, Argentina</p>
-                    <p>Teléfono: (Agregar información)</p>
-                    <p>Email: (Agregar información)</p>
+                    <p>Dirección: Calle Mendoza 1232, Salta, Argentina</p>
+                    <p>Email: santaclara.salta@gmail.com</p>
                 </div>
                 <div class="info-item">
                     <h3>Redes Sociales</h3>
                     <p>Síguenos para novedades y eventos.</p>
                     <ul class="rrss-contacto">
-                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Clarisa Franciscana</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Clarisa Franciscana</a></li>
                     </ul>
                 </div>
             </div>

@@ -139,13 +139,22 @@ document.addEventListener('DOMContentLoaded', function() {
     maxZoom: 19
 }).addTo(mapArgentina);
 
+            // Crear icono circular personalizado
+            const customIcon = L.divIcon({
+                className: 'custom-marker',
+                html: '<div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 3px solid #4B3621; box-shadow: 0 2px 6px rgba(0,0,0,0.3);"><img src="../IMG/cdad-colegios.png" style="width: 100%; height: 100%; object-fit: cover;"/></div>',
+                iconSize: [40, 40],
+                iconAnchor: [20, 20],
+                popupAnchor: [0, -20]
+            });
+
             document.querySelectorAll('.btn-ver').forEach(btn => {
                 const lat = parseFloat(btn.dataset.lat);
                 const lng = parseFloat(btn.dataset.lng);
                 const communityName = btn.closest('.comunidad')?.querySelector('h3')?.textContent || 'Comunidad';
 
                 if (lat && lng && !isNaN(lat) && !isNaN(lng)) {
-                    const marker = L.marker([lat, lng]).addTo(mapArgentina);
+                    const marker = L.marker([lat, lng], { icon: customIcon }).addTo(mapArgentina);
                     marker.bindPopup(`<b>${communityName}</b><br>Obras educativas y pastorales.`);
                 }
             });
@@ -617,6 +626,144 @@ document.addEventListener('DOMContentLoaded', function() {
                 item.classList.add('mostrar');
             });
             btnVerMasTimeline.style.display = 'none';
+        });
+    }
+
+    // Modal para imágenes en galería (cdad-colegios.html)
+    const galeriaImagenes = document.querySelectorAll('.galeria-imagenes img');
+    if (galeriaImagenes.length > 0) {
+        // Crear modal si no existe
+        let modal = document.querySelector('.modal-imagen');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.className = 'modal-imagen';
+            modal.innerHTML = `
+                <span class="cerrar-modal">&times;</span>
+                <img src="" alt="Imagen expandida">
+            `;
+            document.body.appendChild(modal);
+        }
+
+        const modalImg = modal.querySelector('img');
+        const cerrarModal = modal.querySelector('.cerrar-modal');
+
+        // Agregar click a cada imagen
+        galeriaImagenes.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.classList.add('activo');
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+            });
+        });
+
+        // Cerrar modal
+        cerrarModal.addEventListener('click', function() {
+            modal.classList.remove('activo');
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('activo');
+            }
+        });
+
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('activo')) {
+                modal.classList.remove('activo');
+            }
+        });
+    }
+
+    // Carrusel Comunidades y Laicos
+    const carruselColegios = document.querySelector('.carrusel-colegios-imagenes');
+    if (carruselColegios) {
+        const slides = carruselColegios.querySelectorAll('.carrusel-colegios-slide');
+        const btnPrev = document.querySelector('.carrusel-btn-prev-colegios');
+        const btnNext = document.querySelector('.carrusel-btn-next-colegios');
+        const indicadores = document.querySelector('.carrusel-colegios-indicadores');
+        
+        let currentIndex = 0;
+        let autoPlayInterval;
+        
+        // Crear indicadores
+        slides.forEach((_, index) => {
+            const indicador = document.createElement('div');
+            indicador.classList.add('indicador-colegios');
+            if (index === 0) indicador.classList.add('activo');
+            indicador.addEventListener('click', () => goToSlide(index));
+            indicadores.appendChild(indicador);
+        });
+        
+        const dots = indicadores.querySelectorAll('.indicador-colegios');
+        
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('activo', index === currentIndex);
+            });
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('activo', index === currentIndex);
+            });
+        }
+        
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+            resetAutoPlay();
+        }
+        
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+        
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 6000);
+        }
+        
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+        
+        function resetAutoPlay() {
+            stopAutoPlay();
+            startAutoPlay();
+        }
+        
+        // Event listeners
+        btnNext.addEventListener('click', () => {
+            nextSlide();
+            resetAutoPlay();
+        });
+        
+        btnPrev.addEventListener('click', () => {
+            prevSlide();
+            resetAutoPlay();
+        });
+        
+        // Pausar en hover
+        carruselColegios.addEventListener('mouseenter', stopAutoPlay);
+        carruselColegios.addEventListener('mouseleave', startAutoPlay);
+        
+        // Iniciar autoplay
+        startAutoPlay();
+    }
+
+    // Manejo del formulario de contacto con FormSubmit
+    const contactForm = document.getElementById('contacto-form');
+    if (contactForm) {
+        const formStatus = document.getElementById('form-status');
+        
+        // FormSubmit maneja el envío automáticamente, solo mostramos feedback
+        contactForm.addEventListener('submit', function(e) {
+            const submitBtn = contactForm.querySelector('.btn-submit');
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
         });
     }
 

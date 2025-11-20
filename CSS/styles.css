@@ -8,8 +8,8 @@
     --text-white: #FFFFFF;
     --text-muted: #7C6F5F;
 
-    --font-family: 'Merriweather', 'Georgia', serif;
-    --font-family-sans: 'Segoe UI', 'Arial', sans-serif;
+    --font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+    --font-family-sans: 'Garamond', 'Georgia', 'Times New Roman', serif;
     --rounded-sm: 6px;
     --rounded-lg: 14px;
     --shadow: 0 2px 12px rgba(75, 54, 33, 0.07);
@@ -25,12 +25,74 @@
 }
 
 body {
-    font-family: var(--font-family), serif;
+    font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
     background-color: var(--background);
     color: var(--text);
     min-height: 100vh;
     line-height: 1.7;
     font-size: 1.15rem;
+}
+
+/* Tipografía global consistente - Garamond para todo */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+    font-weight: 600;
+}
+
+/* Estilo elegante para TODOS los h2 de secciones (igual que descripción) */
+/* EXCEPTO el hero del index */
+h2:not(.hero-index h2),
+.seccion-timeline h2,
+.seccion-presencia h2,
+.figuras-franciscanas h2,
+.fotos-historicas h2,
+.seccion-comunidades h2,
+.seccion-gobierno h2,
+.seccion-contacto h2,
+.seccion-info-contacto h2,
+.noticias h2,
+.paises-por-continente h2,
+.fotos-comunidades-laicos h2 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    font-family: 'Garamond', Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Línea decorativa debajo de los h2 */
+/* EXCEPTO el hero del index */
+h2:not(.hero-index h2)::after,
+.seccion-timeline h2::after,
+.seccion-presencia h2::after,
+.figuras-franciscanas h2::after,
+.fotos-historicas h2::after,
+.seccion-comunidades h2::after,
+.seccion-gobierno h2::after,
+.seccion-contacto h2::after,
+.seccion-info-contacto h2::after,
+.noticias h2::after,
+.paises-por-continente h2::after,
+.fotos-comunidades-laicos h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-color2), transparent);
+    margin: 0.8rem auto;
+}
+
+p, li, td, th, span, div, label, input, textarea, button, select, a {
+    font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+}
+
+/* Excepción: contenido de oraciones mantiene su fuente */
+.oracion-texto p {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 }
 
 
@@ -121,7 +183,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 0;
-    font-family: var(--font-family), serif;
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .nav-links li {
@@ -164,19 +226,33 @@ body {
     width: 60%;
 }
 
-/* Hero general (para todas las páginas) */
+/* Hero general (para todas las páginas excepto index) */
 #hero {
-    background-image: url('../IMG/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: var(--text-white);
-    padding: 70px 0 50px 0;
     position: relative;
-    box-shadow: var(--shadow);
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    min-height: 60vh;
-    overflow: hidden;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(75, 54, 33, 0.88) 0%,
+        rgba(75, 54, 33, 0.75) 35%,
+        rgba(139, 90, 43, 0.65) 65%,
+        rgba(75, 54, 33, 0.82) 100%
+    );
+    z-index: 1;
 }
 
 /* Hero del index con carrusel - sobreescribe los estilos generales */
@@ -192,6 +268,10 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0 auto; /* Centrar el contenedor */
+}
+
+#hero.hero-index::before {
+    display: none;
 }
 
 /* Hero Carrusel solo para index */
@@ -246,6 +326,10 @@ body {
 
 .hero-index .hero-texto {
     background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
     padding: 15px 30px;
     text-align: center;
 }
@@ -275,39 +359,61 @@ body {
 
 /* Hero estándar para otras páginas */
 .hero-img {
-    flex: 1;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
 .hero-img img {
     width: 100%;
-    height: auto;
-    min-height: 60vh;
+    height: 100%;
     object-fit: cover;
+    object-position: center 35%;
+    display: block;
 }
 
 .hero-texto {
-    flex: 1;
-    background: rgba(75, 54, 33, 0.85);
-    max-width: 50%;
-    padding: 40px 24px;
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 50px 40px;
     text-align: center;
-    box-shadow: 0 2px 16px rgba(60,40,20,0.08);
-    margin: 0 auto;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    margin: 0 20px;
 }
 
 .hero-titulo {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
     font-family: var(--font-family), serif;
-    margin-bottom: 0.7rem;
-    color: var(--text-white);
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 
+        2px 2px 8px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 0, 0, 0.6);
+    line-height: 1.2;
 }
 
 .hero-descripcion {
-    font-size: 1.08rem;
-    margin-bottom: 1.5rem;
-    color: var(--accent-color4);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #f5f5f5;
+    font-weight: 400;
+    text-shadow: 
+        1px 1px 4px rgba(0, 0, 0, 0.9),
+        0 0 12px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    font-family: var(--font-family-sans), sans-serif;
 }
 
 /* Botones */
@@ -1663,7 +1769,7 @@ section p, section li {
 /* Sección Comunidades (cdad-colegios.html) */
 .seccion-comunidades {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Cambia a 1fr en media query */
+    grid-template-columns: 1.6fr 1fr; /* Lista comunidades más ancha, mapa más angosto */
     gap: 1rem;
     padding: 1.5rem;
     background-color: var(--accent-color4);
@@ -1722,22 +1828,75 @@ section p, section li {
 
 .comunidad .galeria-imagenes {
     display: flex;
-    gap: 15px;
+    gap: 6px;
     margin: 1rem 0;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
 
 .comunidad .galeria-imagenes img {
-    width: auto;
-    max-width: 280px;
-    height: auto;
-    max-height: 220px;
+    width: 130px;
+    height: 95px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--rounded-sm);
+    box-shadow: 0 3px 10px rgba(60,40,20,0.2);
+    border: 2px solid var(--accent-color2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.comunidad .galeria-imagenes img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(60,40,20,0.3);
+}
+
+/* Modal para imagen expandida */
+.modal-imagen {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-imagen.activo {
+    display: flex;
+}
+
+.modal-imagen img {
+    max-width: 90%;
+    max-height: 90%;
     object-fit: contain;
     border-radius: var(--rounded-sm);
-    box-shadow: 0 2px 8px rgba(60,40,20,0.15);
-    border: 2px solid var(--accent-color2);
-    background: var(--text-white);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.modal-imagen .cerrar-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-imagen .cerrar-modal:hover {
+    color: var(--accent-color2);
+}
+
+.comunidad .btn-ver {
+    display: block;
+    text-align: right;
+    margin-left: auto;
+    width: fit-content;
 }
 
 
@@ -2217,6 +2376,30 @@ section p, section li {
     font-family: var(--font-family-sans), sans-serif;
     background: var(--accent-color4);
     color: var(--text);
+}
+
+/* Estilos para mensajes de estado del formulario */
+.form-status {
+    padding: 1rem;
+    border-radius: var(--rounded-sm);
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-status.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
 }
 
 .seccion-info-contacto {
@@ -2862,5 +3045,245 @@ section {
 
     .continente-card li {
         font-size: 1rem;
+    }
+}
+
+/* Carrusel Comunidades y Laicos */
+.fotos-comunidades-laicos {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: var(--accent-color4);
+    border-radius: var(--rounded-lg);
+    box-shadow: var(--shadow);
+}
+
+.fotos-comunidades-laicos h2 {
+    font-family: var(--font-family), serif;
+    font-size: 2rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.carrusel-colegios {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--rounded-lg);
+    background: #000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carrusel-colegios-imagenes {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    overflow: hidden;
+}
+
+.carrusel-colegios-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.carrusel-colegios-slide.activo {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carrusel-colegios-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.carrusel-btn-prev-colegios,
+.carrusel-btn-next-colegios {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--accent-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.carrusel-btn-prev-colegios {
+    left: 20px;
+}
+
+.carrusel-btn-next-colegios {
+    right: 20px;
+}
+
+.carrusel-btn-prev-colegios:hover,
+.carrusel-btn-next-colegios:hover {
+    background: var(--accent-color);
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.carrusel-btn-prev-colegios:hover svg,
+.carrusel-btn-next-colegios:hover svg {
+    stroke: white;
+}
+
+.carrusel-btn-prev-colegios svg,
+.carrusel-btn-next-colegios svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--accent-color);
+    transition: stroke 0.3s ease;
+}
+
+.carrusel-colegios-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.indicador-colegios {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.indicador-colegios:hover {
+    transform: scale(1.2);
+    background: var(--accent-color2);
+}
+
+.indicador-colegios.activo {
+    background: var(--accent-color);
+    width: 14px;
+    height: 14px;
+}
+
+@media (max-width: 768px) {
+    .carrusel-colegios-imagenes {
+        height: 380px;
+    }
+    
+    .carrusel-colegios-slide {
+        padding: 0;
+    }
+    
+    .carrusel-btn-prev-colegios,
+    .carrusel-btn-next-colegios {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carrusel-btn-prev-colegios {
+        left: 10px;
+    }
+    
+    .carrusel-btn-next-colegios {
+        right: 10px;
+    }
+    
+    .carrusel-btn-prev-colegios svg,
+    .carrusel-btn-next-colegios svg {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .indicador-colegios {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .indicador-colegios.activo {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Responsive para Hero (páginas internas) */
+@media (max-width: 768px) {
+    #hero {
+        height: 350px;
+    }
+    
+    .hero-texto {
+        padding: 30px 20px;
+        margin: 0 15px;
+        border-radius: 12px;
+    }
+    
+    .hero-titulo {
+        font-size: 2rem;
+    }
+    
+    .hero-descripcion {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        height: 280px;
+    }
+    
+    #hero::before {
+        background: linear-gradient(
+            135deg,
+            rgba(75, 54, 33, 0.92) 0%,
+            rgba(75, 54, 33, 0.85) 50%,
+            rgba(75, 54, 33, 0.92) 100%
+        );
+    }
+    
+    .hero-texto {
+        padding: 20px 15px;
+        margin: 0 10px;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(6px);
+    }
+    
+    .hero-titulo {
+        font-size: 1.5rem;
+        margin-bottom: 0.7rem;
+    }
+    
+    .hero-descripcion {
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
 }

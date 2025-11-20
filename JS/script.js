@@ -177,16 +177,34 @@ document.addEventListener('DOMContentLoaded', function() {
     maxZoom: 19
 }).addTo(mapWorld);
 
+            // Crear icono personalizado circular
+            const customIcon = L.divIcon({
+                className: 'custom-marker',
+                html: '<div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 3px solid #4B3621; box-shadow: 0 2px 6px rgba(0,0,0,0.3);"><img src="../IMG/Instituto.jpg" style="width: 100%; height: 100%; object-fit: cover;"/></div>',
+                iconSize: [40, 40],
+                iconAnchor: [20, 20],
+                popupAnchor: [0, -20]
+            });
+
             const globalLocations = [
-                { coords: [-34.0, -60.0], name: 'Argentina' },
-                { coords: [41.0, 12.0], name: 'Italia' },
-                { coords: [-12.0, -77.0], name: 'Perú' },
-                { coords: [40.0, -3.0], name: 'España' },
-                { coords: [6.0, 3.0], name: 'Nigeria' }
+                { coords: [-34.6037, -58.3816], name: 'Argentina' },
+                { coords: [-15.8267, -47.9218], name: 'Brasil' },
+                { coords: [-16.5000, -68.1500], name: 'Bolivia' },
+                { coords: [-12.0464, -77.0428], name: 'Perú' },
+                { coords: [41.8719, 12.5674], name: 'Italia' },
+                { coords: [40.4168, -3.7038], name: 'España' },
+                { coords: [51.1657, 10.4515], name: 'Alemania' },
+                { coords: [45.9432, 24.9668], name: 'Rumanía' },
+                { coords: [20.5937, 78.9629], name: 'India' },
+                { coords: [11.8037, -15.1804], name: 'Guinea Bissau' },
+                { coords: [14.4974, -14.4524], name: 'Senegal' },
+                { coords: [-18.7669, 46.8691], name: 'Madagascar' },
+                { coords: [21.9162, 95.9560], name: 'Myanmar' },
+                { coords: [7.9465, -1.0232], name: 'Ghana' }
             ];
 
             globalLocations.forEach(loc => {
-                L.marker(loc.coords).addTo(mapWorld)
+                L.marker(loc.coords, { icon: customIcon }).addTo(mapWorld)
                     .bindPopup(`Presencia en <b>${loc.name}</b><br>Obras educativas y sociales.`);
             });
         } catch (error) {
@@ -589,6 +607,18 @@ document.addEventListener('DOMContentLoaded', function() {
             iniciarAuto();
         }
     });
+
+    // Botón "Ver más" del timeline (historiaInst.html)
+    const btnVerMasTimeline = document.getElementById('btn-ver-mas-timeline');
+    if (btnVerMasTimeline) {
+        btnVerMasTimeline.addEventListener('click', function() {
+            const itemsOcultos = document.querySelectorAll('.timeline-item-oculto');
+            itemsOcultos.forEach(item => {
+                item.classList.add('mostrar');
+            });
+            btnVerMasTimeline.style.display = 'none';
+        });
+    }
 
     console.log('All scripts initialized successfully.');
 });

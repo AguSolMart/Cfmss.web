@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="../CSS/mediaqueries.css">
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <header class="header">
@@ -50,7 +48,11 @@
         <!-- Sección Formulario -->
         <section class="seccion-contacto">
             <h2>Envíanos un Mensaje</h2>
-            <form id="contacto-form" class="form-contacto">
+            <form id="contacto-form" class="form-contacto" action="https://formsubmit.co/clarisamisioneraargentina@gmail.com" method="POST">
+                <!-- Configuración de FormSubmit -->
+                <input type="hidden" name="_subject" value="Nueva consulta desde el sitio web CFMSS">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre y Apellido" required>
                 <input type="email" name="email" id="email" placeholder="Email" required>
                 <textarea name="consulta" id="consulta" placeholder="Escribe tu consulta" rows="5" required></textarea>

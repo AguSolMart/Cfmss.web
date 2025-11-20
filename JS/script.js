@@ -222,50 +222,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // EmailJS Configuration para formulario de contacto
-    const contactForm = document.getElementById('contacto-form');
-    if (contactForm) {
-        // Inicializar EmailJS con tu Public Key
-        emailjs.init('TU_PUBLIC_KEY'); // REEMPLAZAR con tu Public Key de EmailJS
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = contactForm.querySelector('.btn-submit');
-            const formStatus = document.getElementById('form-status');
-            const originalBtnText = submitBtn.textContent;
-            
-            // Cambiar botón a estado "Enviando..."
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.disabled = true;
-            formStatus.textContent = '';
-            formStatus.className = 'form-status';
-            
-            // Parámetros del template
-            const templateParams = {
-                nombre: document.getElementById('nombre').value,
-                email: document.getElementById('email').value,
-                consulta: document.getElementById('consulta').value
-            };
-            
-            // Enviar email usando EmailJS
-            emailjs.send('TU_SERVICE_ID', 'TU_TEMPLATE_ID', templateParams)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    formStatus.textContent = '✓ Mensaje enviado correctamente. ¡Gracias por contactarnos!';
-                    formStatus.className = 'form-status success';
-                    contactForm.reset();
-                    submitBtn.textContent = originalBtnText;
-                    submitBtn.disabled = false;
-                }, function(error) {
-                    console.error('FAILED...', error);
-                    formStatus.textContent = '✗ Error al enviar el mensaje. Por favor, intenta nuevamente.';
-                    formStatus.className = 'form-status error';
-                    submitBtn.textContent = originalBtnText;
-                    submitBtn.disabled = false;
-                });
-        });
-    }
+    // FormSubmit maneja el envío del formulario automáticamente
+    // No se requiere JavaScript adicional para el formulario de contacto
 
     // Smooth Scrolling (resto igual)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
